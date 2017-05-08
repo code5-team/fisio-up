@@ -1,0 +1,2 @@
+class StatusUsuario < ApplicationRecord
+end
