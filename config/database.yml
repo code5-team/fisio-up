@@ -1,25 +1,29 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-
+#Configuração da database de desenvolvimento  
 development:
-  <<: *default
-  database: db/development.sqlite3
+   adapter: postgresql
+   encoding: SQL_ASCII
+   database: fisioup_development
+   host: localhost
+   pool: 5
+   username: ubuntu
+   password: fsp-up
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
+#Configuração da database de teste
+test: 
+   adapter: postgresql
+   encoding: SQL_ASCII
+   database: fisioup_test
+   host: localhost
+   pool: 5
+   username: ubuntu
+   password: fsp-up
+ 
+#Configuração da database de produção 
+production: 
+   adapter: postgresql
+   encoding: SQL_ASCII
+   database: fisioup_production
+   host: localhost
+   pool: 5
+   username: ubuntu
+   password: fsp-up
