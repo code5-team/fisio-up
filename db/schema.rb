@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170507221143) do
+ActiveRecord::Schema.define(version: 20170508173719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "statuses", force: :cascade do |t|
+  create_table "status_usuarios", force: :cascade do |t|
+    t.string   "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "telefones", force: :cascade do |t|
+    t.string   "numero"
+    t.integer  "usuario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["usuario_id"], name: "index_telefones_on_usuario_id", using: :btree
+  end
+
+  create_table "tipo_usuarios", force: :cascade do |t|
     t.string   "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,16 +37,19 @@ ActiveRecord::Schema.define(version: 20170507221143) do
 
   create_table "usuarios", force: :cascade do |t|
     t.string   "nome"
-    t.string   "string"
     t.string   "email"
-    t.string   "senha"
+    t.string   "senha_criptografada"
     t.date     "datanascimento"
-    t.string   "cpf"
-    t.integer  "status_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["status_id"], name: "index_usuarios_on_status_id", using: :btree
+    t.string   "crefito"
+    t.integer  "tipo_usuario_id"
+    t.integer  "status_usuario_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["status_usuario_id"], name: "index_usuarios_on_status_usuario_id", using: :btree
+    t.index ["tipo_usuario_id"], name: "index_usuarios_on_tipo_usuario_id", using: :btree
   end
 
-  add_foreign_key "usuarios", "statuses"
+  add_foreign_key "telefones", "usuarios"
+  add_foreign_key "usuarios", "status_usuarios"
+  add_foreign_key "usuarios", "tipo_usuarios"
 end
