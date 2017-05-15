@@ -13,7 +13,7 @@ gem 'rails', '~> 5.0.2'
 gem 'pg'
 
 #Para utilizar a criptografia no sistema
-gem 'bcrypt', :require => 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

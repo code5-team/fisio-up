@@ -1,3 +1,3 @@
 class Telefone < ApplicationRecord
-  belongs_to :Usuario
+  belongs_to :usuario
 end

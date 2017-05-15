@@ -1,0 +1,4 @@
+ id | nome | email | senha_criptografada | datanascimento | crefito | tipo_usuario_id | status_usuario_id | created_at | updated_at 
+----+------+-------+---------------------+----------------+---------+-----------------+-------------------+------------+------------
+(0 rows)
+

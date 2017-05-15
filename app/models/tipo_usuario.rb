@@ -1,3 +1,3 @@
 class TipoUsuario < ApplicationRecord
-  has_many :Usuario
+  has_many :usuario
 end
