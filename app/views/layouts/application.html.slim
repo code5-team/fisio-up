@@ -1,4 +1,4 @@
-
+doctype html
 html
   head
     title FisioUp
@@ -7,4 +7,5 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = yield
+    main role='main'
+      = yield

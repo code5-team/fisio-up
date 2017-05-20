@@ -1,0 +1,13 @@
+* {
+  outline: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F6EDFF;
+  // font-family: $primary-font;
+  font-size: 14px;
+
+  main[role="main"] { background: transparent }
+}
