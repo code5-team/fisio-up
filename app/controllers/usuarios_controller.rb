@@ -17,7 +17,7 @@ class UsuariosController < ApplicationController
   def edit
     @usuario = Usuario.find(params[:id])
   end
-  
+
   def create
     @usuario = Usuario.new(usuario_params)
     @usuario.password = params[:password]
