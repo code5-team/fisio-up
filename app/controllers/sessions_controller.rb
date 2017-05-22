@@ -1,25 +1,19 @@
 class SessionsController < ApplicationController
-  
   def new
   end
   
   def create
-    usuario = Usuario.where(email: params[:email]).first
+   #Localizado o usuario pelo email, depois verifico se o usuario não é nil e a senha está correta, redireciono...
+    usuario = Usuario.find_by(email: params[:session][:email].downcase)
     
     if usuario && usuario.authenticate(params[:password])
-      login_usuario!(usuario)
+      log_in (usuario) #Recupero o id dele, através de um metódo no helper session...
+      redirect_to usuario
     else
       flash.now[:error] = "Login ou senha inválidos"
-      redirect_to 
+      render 'new'  
     end
   end
-  
-  
-  private
-  def login_user!(usuario)
-    session[:usuario_id] = user.id
-    flash[:notice] = "Bem-vindo, você está logado!"
-    redirect_to root_path
-  end
+
   
 end

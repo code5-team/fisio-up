@@ -7,6 +7,9 @@ class Usuario < ApplicationRecord
   message: "Formato de e-mail não valido" }
   validates_uniqueness_of :email
   
+  #Associações
+  #belongs_to :StatusUsuario
+  
   #Metódos para criptografar a senha, documentação: https://github.com/codahale/bcrypt-ruby/tree/master
   def password
     @password ||= Password.new(password_digest)
@@ -16,5 +19,8 @@ class Usuario < ApplicationRecord
     @password = Password.create(new_password)
     self.password_digest = @password
   end
+  
+  #Usado para descriptografar a senha do usuario no login, usando o metodo authenticate do Bcrypt (controllers/sessions)
+  has_secure_password
   
 end
