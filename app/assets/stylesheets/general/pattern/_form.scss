@@ -1,0 +1,33 @@
+.input-field {
+  margin-top: 25px;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #706776;
+    margin-bottom: 10px;
+  }
+
+  input {
+    height: 35px;
+    width: 100%;
+    border: 1px solid #C3B7D3;
+
+    &[type='submit'] {
+      background-color: #7E46A6; 
+      color: white;
+    }
+  }
+}
+
+.container {
+  $container-width: 300px;
+  position: absolute;
+  left: 50%;
+  margin-left: -$container-width/2;
+  width: $container-width;
+  padding: 25px;
+  border: 1px solid #C3B7D3;
+  background-color: #fff;
+}
