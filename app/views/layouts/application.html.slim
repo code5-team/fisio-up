@@ -1,11 +1,14 @@
 doctype html
 html
   head
+    meta charset='utf-8'
     title FisioUp
-    = csrf_meta_tags
 
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application'
+
   body
     main role='main'
       = yield
+
+    = javascript_include_tag 'application'

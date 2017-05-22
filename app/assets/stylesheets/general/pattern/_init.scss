@@ -5,9 +5,9 @@
 }
 
 body {
-  background: #F6EDFF;
-  // font-family: $primary-font;
+  background: $background-color;
+  font-family: $primary-font;
   font-size: 14px;
-
+  color: $color-2;
   main[role="main"] { background: transparent }
 }
