@@ -11,3 +11,11 @@ body {
   color: $color-2;
   main[role="main"] { background: transparent }
 }
+
+.content > * {
+  margin: 0 auto;
+}
+
+.content form {
+  margin: 20px auto 0;
+}

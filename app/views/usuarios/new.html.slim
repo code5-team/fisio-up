@@ -1,6 +1,6 @@
 h3 Sign Up
 
-= form_for @usuario do |f|
+= form_for @usuario, url: register_path do |f|
   .container
     .input-field
       = f.label 'Nome: '
