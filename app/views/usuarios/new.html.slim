@@ -1,21 +1,46 @@
-h3 Sign Up
+.content
+  .logo
 
-= form_for @usuario, url: register_path do |f|
-  .container
-    .input-field
-      = f.label 'Nome: '
-      = f.text_field :nome
-    .input-field
-      = f.label 'Senha: '
-      = f.password_field :password
-    .input-field
-      = f.label 'E-mail: '
-      = f.text_field :email
-    .input-field
-      = f.label 'CREFITO: '
-      = f.text_field :crefito
-    .input-field
-      = f.label 'Data de nascimento: '
-      = date_field("usuario", "datanascimento")
-    .input-field
-      = f.submit
+  h3.title Sign Up
+
+  = form_for @usuario, url: register_path do |f|
+    .container
+      .subtitle
+        span Dados de acesso
+
+      .input-field
+        = f.text_field :email, placeholder: 'E-mail'
+
+      / .input-field
+      /   = f.label 'Usuário: '
+      /   = f.text_field :usuario
+
+      .input-field
+        = f.password_field :password, placeholder: 'Senha'
+
+      / .input-field
+      /   = f.label 'Confirmar Senha: '
+      /   = f.password_field :password
+
+      .diviser
+
+      .subtitle
+        span Dados pessoais
+
+      .input-field
+        = f.text_field :nome, placeholder: 'Nome Completo'
+      .input-field.date_field
+        = f.label 'Data de nascimento: '
+        = date_field("usuario", "datanascimento")
+
+      / .input-field
+      /   = f.label 'Cargo: '
+      /   = f.text_field :cargo
+
+      .input-field
+        = f.text_field :crefito, placeholder: 'Crefito'
+
+      .input-field
+        = f.submit
+    .action
+      = link_to 'Sign in', login_path
