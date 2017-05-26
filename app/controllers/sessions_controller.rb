@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     usuario = Usuario.find_by(email: params[:session][:email].downcase)
     
     if usuario && usuario.authenticate(params[:password])
-      log_in (usuario) #Recupero o id dele, através de um metódo no helper session...
+      helpers.log_in (usuario) #Recupero o id dele, através de um metódo no helper session...
       redirect_to usuario
     else
       flash.now[:error] = "Login ou senha inválidos"
