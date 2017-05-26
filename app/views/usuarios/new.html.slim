@@ -3,7 +3,7 @@
 
   h3.title Sign Up
 
-  = form_for @usuario, url: register_path do |f|
+  = form_for @usuario do |f|
     .container
       .subtitle
         span Dados de acesso
@@ -42,5 +42,5 @@
 
       .input-field
         = f.submit
-    .action
-      = link_to 'Sign in', login_path
+    / .action
+    /   = link_to 'Sign in', login_path
