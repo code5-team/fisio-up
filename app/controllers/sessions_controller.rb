@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     
     if usuario && usuario.authenticate(params[:password])
       helpers.log_in (usuario) #Recupero o id dele, através de um metódo no helper session...
-      redirect_to usuario
+      redirect_to :controller => 'usuarios', :action => 'show', id: usuario
     else
       flash.now[:error] = "Login ou senha inválidos"
       render 'new'  

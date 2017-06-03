@@ -24,7 +24,7 @@ class UsuariosController < ApplicationController
     
     if @usuario.save
        flash[:notice] = "Usuário cadastrado com sucesso!"
-       redirect_to @usuario
+       redirect_to action: 'show', id: @usuario
     else
       render :new
     end
