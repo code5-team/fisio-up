@@ -8,18 +8,9 @@ class Usuario < ApplicationRecord
   validates_uniqueness_of :email
   
   #Associações
-  #belongs_to :StatusUsuario
-  
-  #Metódos para criptografar a senha, documentação: https://github.com/codahale/bcrypt-ruby/tree/master
-  def password
-    @password ||= Password.new(password_digest)
-  end
-  
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_digest = @password
-  end
-  
+  has_many :telefones, inverse_of: :usuario #Inverse_of evita consulta no banco para recuperar o objeto, recupero da memória. 
+  accepts_nested_attributes_for :telefones
+
   #Usado para descriptografar a senha do usuario no login, usando o metodo authenticate do Bcrypt (controllers/sessions)
   has_secure_password
   

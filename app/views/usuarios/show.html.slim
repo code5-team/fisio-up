@@ -10,3 +10,13 @@ ul
   li
     | Data de Nascimento: 
     = @usuario.datanascimento
+  li
+    | Telefones: 
+    - @usuario.telefones.each do |telefone|
+        = telefone.numero
+  li
+    | E-mail: 
+    = @usuario.email
+    
+
+  

@@ -17,6 +17,9 @@
 
       .input-field
         = f.password_field :password, placeholder: 'Senha'
+      
+      .input-field
+        = f.password_field :password_confirmation, placeholder: 'Confirme a senha'
 
       / .input-field
       /   = f.label 'Confirmar Senha: '
@@ -32,6 +35,10 @@
       .input-field.date_field
         = f.label 'Data de nascimento: '
         = date_field("usuario", "datanascimento")
+        
+      = f.fields_for :telefones do |telefone_form|
+        .input-field
+          = telefone_form.text_field :numero, placeholder: 'Telefone'
 
       / .input-field
       /   = f.label 'Cargo: '
