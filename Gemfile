@@ -24,6 +24,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'slim'
 gem 'coffee-rails'
+gem 'font-awesome-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
