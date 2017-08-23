@@ -1,4 +1,14 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import 'fullcalendar';
+
+@import 'materialize/components/color';
+$primary-color: rgba( #1a1a1a, 1) !default;
+$secondary-color: rgba( #c00, 1) !default;
+$link-color: rgba( #c00, 1) !default;
+
+@import 'materialize';
+
+@import 'bourbon';
+
 @import 'general/pattern/*';
