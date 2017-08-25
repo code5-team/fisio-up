@@ -6,15 +6,21 @@
 
 body {
   background: $background-color;
+  color: $color-2;
   font-family: $primary-font;
   font-size: 14px;
-  color: $color-2;
   main[role="main"] {
     @include position(absolute, $header-height auto auto auto);
     background: transparent;
     margin: 0;
     min-height: calc(100vh - 64px);
     z-index: 0;
+  }
+
+  &.no-header {
+    main[role="main"] {
+      @include position(relative, 0 0 0 0);
+    }
   }
 }
 
