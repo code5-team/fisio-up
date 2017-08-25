@@ -33,7 +33,6 @@
       .input-field
         = f.text_field :nome, placeholder: 'Nome Completo'
       .input-field.date_field
-        = f.label 'Data de nascimento: '
         = date_field("usuario", "datanascimento")
         
       = f.fields_for :telefones do |telefone_form|
