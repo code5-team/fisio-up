@@ -9,6 +9,7 @@ class UsuariosController < ApplicationController
   def new
     @usuario = Usuario.new
     @usuario.telefones.build
+    render layout: 'blank'
   end
   
   def show
