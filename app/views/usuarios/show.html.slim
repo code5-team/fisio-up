@@ -1,24 +1,9 @@
-p#notice
-  = notice
-h2
-  | Nome: 
-  = @usuario.nome
-ul
-  li
-    | Crefito: 
-    = @usuario.crefito
-  li
-    | Data de Nascimento: 
-    = @usuario.datanascimento
-  li
-    | Telefones: 
-    - @usuario.telefones.each do |telefone|
-        = telefone.numero
-  li
-    | E-mail: 
-    = @usuario.email
-    
-  .action
-    = link_to 'Log Out', logout_path, method: :delete
+/ .action
+/   = link_to 'Log Out', logout_path, method: :delete
+#home.row
+  .side-bar.col.s12.m4.l3
+    ul
+      li.bold.center-align Filtro
 
-#calendar
+  .calendar.col.s12.m8.l9.off-set-m4.offset-l3
+    #calendar

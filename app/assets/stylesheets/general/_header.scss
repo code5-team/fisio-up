@@ -1,0 +1,27 @@
+nav {
+  position: absolute;
+  z-index: 1;
+
+  .nav-wrapper {
+    .logo-nav {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      background: url('fisioup-logo.png') no-repeat center;
+      background-size: 40px 40px;
+      margin: 0 10px;
+    }
+    .brand {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    .user-icon {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      background: url('user.png') no-repeat center;
+      background-size: 30px 30px;
+      margin: 0 10px;
+    }
+  }
+}

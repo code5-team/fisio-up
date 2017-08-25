@@ -1,0 +1,14 @@
+#home {
+  margin: 0;
+  z-index: 0;
+
+  .side-bar {
+    position: absolute;
+    height: 100%;
+    background: $secundary-color;
+  }
+
+  .calendar {
+    padding: 20px;
+  }
+}

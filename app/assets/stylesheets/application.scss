@@ -3,7 +3,7 @@
 @import 'fullcalendar';
 
 @import 'materialize/components/color';
-$primary-color: rgba( #1a1a1a, 1) !default;
+$primary-color: #7E46A6 !default;
 $secondary-color: rgba( #c00, 1) !default;
 $link-color: rgba( #c00, 1) !default;
 
@@ -12,3 +12,6 @@ $link-color: rgba( #c00, 1) !default;
 @import 'bourbon';
 
 @import 'general/pattern/*';
+@import 'general/header';
+@import 'general/home';
+@import 'general/calendar';

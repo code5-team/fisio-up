@@ -1,0 +1,14 @@
+nav
+  .nav-wrapper
+    .side-bar
+      .valign-wrapper.left
+        = link_to '', '#', class: 'logo-nav'
+        span.brand FisioUp
+        ul
+          li = link_to 'Calendário', '#'
+          li = link_to 'Equipe', '#'
+      .valign-wrapper.right
+        span
+          | ola, 
+          = @usuario.nome
+        = link_to '', '#', class: 'user-icon'
