@@ -6,6 +6,14 @@
     position: absolute;
     height: 100%;
     background: $secundary-color;
+
+    ul li {
+      height: 44px;
+      line-height:44px;
+      padding-left: 15px;
+
+      &.filter-title { padding-left: 0 }
+    }
   }
 
   .calendar {
