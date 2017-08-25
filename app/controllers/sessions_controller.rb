@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to :controller => 'usuarios', :action => 'show', id: usuario
     else
       flash[:danger] = 'Login ou senha inválidos'
-      render 'new'  
+      render 'new', layout: 'blank'
     end
   end
 
