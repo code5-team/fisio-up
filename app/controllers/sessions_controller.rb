@@ -1,9 +1,10 @@
 class SessionsController < ApplicationController
   def new
-    render layout: 'blank'
     #Se o usuário estiver logado, redireciono para o perfil
     if helpers.logged_in?
       redirect_to :controller => 'usuarios', :action => 'show'
+    else
+      render layout: 'blank'
     end
   end
   

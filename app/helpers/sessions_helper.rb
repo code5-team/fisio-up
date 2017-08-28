@@ -19,11 +19,10 @@ module SessionsHelper
 
   #Identifico se o usuário está logado, retornando TRUE ou FALSE.
   def logged_in?
-    if !current_user.nil? & (session[:tempo_logado] < Time.now)
+    if !session[:tempo_logado].nil? and session[:tempo_logado] < Time.now
       log_out
-    else
-      !current_user.nil?
     end
+    !current_user.nil?
   end
   
   def is_admin?
