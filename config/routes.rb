@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   
   match 'register' => 'usuarios#new', via: 'get'
   match 'register' => 'usuarios#create', via: 'post'
-  match 'login/:id' => 'usuarios#show', via: 'get'
+  match 'profile' => 'usuarios#show', via: 'get'
+  match 'edit' => 'usuarios#edit', via: 'get'
+  match 'update' => 'usuarios#update', via: 'post'
   
   delete '/logout', to: 'sessions#destroy'
   

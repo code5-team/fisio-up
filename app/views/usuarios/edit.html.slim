@@ -1,0 +1,17 @@
+h3.title Edite seu perfil
+= form_for @usuario, url: update_path, method: :POST do |f|
+  .form-container
+    = f.label 'Nome: '
+    = f.text_field :nome, :value => @usuario.nome
+    p
+    = f.label 'E-mail: '
+    = f.text_field :email, :value => @usuario.email
+    p
+    = f.label 'Data de nascimento: '
+    = date_field("usuario", "datanascimento", :value => @usuario.datanascimento)
+    p
+    = f.label 'Crefito'
+    = f.text_field :crefito, :value => @usuario.crefito
+    = f.submit 'Salvar'
+    p
+    = link_to 'Voltar', :back

@@ -2,7 +2,6 @@ class UsuariosController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
   
   def index
-    @usuario = Usuario.new
     render :new
   end
   
@@ -13,20 +12,29 @@ class UsuariosController < ApplicationController
   end
   
   def show
-    @usuario = helpers.current_user #Usuario.find(params[:id])
+    @usuario = helpers.current_user
   end
   
-  def edits
-    @usuario = Usuario.find(params[:id])
+  def edit
+    @usuario = helpers.current_user
+  end
+  
+  def update
+    @usuario = helpers.current_user
+    if @usuario.update_attributes(usuario_params)
+      redirect_to action: 'show'
+    else
+      render edit
+    end
+    
   end
 
   def create
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-       helpers.log_in @usuario
-       flash[:notice] = "Usuário cadastrado com sucesso!"
-       redirect_to action: 'show', id: @usuario
+       helpers.log_in @usuario #Crio a sessão do usuário
+       redirect_to action: 'show'
     else
       render :new
     end
@@ -45,10 +53,11 @@ class UsuariosController < ApplicationController
   end
   
   #Confirma se o usuário está logado
+  private
   def logged_in_user
     unless helpers.logged_in?
       flash[:danger] = "Por favor realize o login."
-      redirect_to action: 'new'
+      redirect_to root_url
     end
   end
 end

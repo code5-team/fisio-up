@@ -2,13 +2,14 @@ nav
   .nav-wrapper
     .side-bar
       .valign-wrapper.left
-        = link_to '', '#', class: 'logo-nav'
+        = link_to '', 'profile', class: 'logo-nav'
         span.brand FisioUp
         ul
-          li = link_to 'Calendário', '#'
+          li = link_to 'Calendário', :profile
           li = link_to 'Equipe', '#'
+          li = link_to 'Sair', '/logout', method: :delete
       .valign-wrapper.right
         span
-          | ola, 
+          | Olá, 
           = @usuario.nome
-        = link_to '', '#', class: 'user-icon'
+        = link_to '', :edit, class: 'user-icon'

@@ -1,14 +1,18 @@
 class SessionsController < ApplicationController
   def new
     render layout: 'blank'
+    #Se o usuário estiver logado, redireciono para o perfil
+    if helpers.logged_in?
+      redirect_to :controller => 'usuarios', :action => 'show'
+    end
   end
   
   def create
    #Localizado o usuario pelo email, depois verifico se o usuario não é nil e a senha está correta, redireciono...
     usuario = Usuario.find_by(email: params[:session][:email].downcase)
     
-    if usuario && usuario.authenticate(params[:session][:password])
-      helpers.log_in (usuario) #Recupero o id dele, através de um metódo no helper session...
+    if !usuario.nil? && usuario.authenticate(params[:session][:password])
+      helpers.log_in (usuario) #logo usuário em um metodo do helper. 
       redirect_to :controller => 'usuarios', :action => 'show', id: usuario
     else
       flash[:danger] = 'Login ou senha inválidos'
