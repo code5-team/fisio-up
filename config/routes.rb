@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   match 'edit' => 'usuarios#edit', via: 'get'
   match 'update' => 'usuarios#update', via: 'post'
   
+  #match '/plantao' => 'plantoes#index', via: 'get' NAO CONSEGUI USAR
+  #resources 'plantoes'
+  get '/plantoes', to: 'plantoes#index'
+
   delete '/logout', to: 'sessions#destroy'
   
   #get '/login' => 'sessions#new'

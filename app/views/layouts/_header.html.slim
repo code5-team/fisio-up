@@ -7,7 +7,9 @@ nav
         ul
           li = link_to 'Calendário', :profile
           li = link_to 'Equipe', '#'
-          li = link_to 'Sair', '/logout', method: :delete
+          li = link_to 'Plantões', plantoes_path
+          li.marc = link_to 'Sair', '/logout', method: :delete
+      
       .valign-wrapper.right
         span
           | Olá, 
