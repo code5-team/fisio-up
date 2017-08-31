@@ -15,4 +15,5 @@
 //= require moment
 //= require fullcalendar
 //= require materialize
+//= require materializeInit
 //= require_tree .

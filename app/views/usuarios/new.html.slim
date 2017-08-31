@@ -9,44 +9,48 @@
         span Dados de acesso
 
       .input-field
-        = f.text_field :email, placeholder: 'E-mail'
+        = f.label 'E-mail'
+        = f.text_field :email
 
       / .input-field
       /   = f.label 'Usuário: '
       /   = f.text_field :usuario
 
       .input-field
-        = f.password_field :password, placeholder: 'Senha'
+        = f.label 'Senha'
+        = f.password_field :password
       
       .input-field
-        = f.password_field :password_confirmation, placeholder: 'Confirme a senha'
+        = f.label 'Confirme a senha'
+        = f.password_field :password_confirmation
 
       / .input-field
       /   = f.label 'Confirmar Senha: '
       /   = f.password_field :password
-
-      .diviser
-
+    .form-container
       .subtitle
         span Dados pessoais
 
       .input-field
-        = f.text_field :nome, placeholder: 'Nome Completo'
-      .input-field.date_field
-        = date_field("usuario", "datanascimento")
+        = f.label 'Nome Completo'
+        = f.text_field :nome
+      .date_field
+        = f.label 'Data de nascimento'
+        = f.text_field :datanascimento, class: 'materialize-datepicker'
         
       = f.fields_for :telefones do |telefone_form|
         .input-field
-          = telefone_form.text_field :numero, placeholder: 'Telefone'
+          = f.label 'Telefone'
+          = telefone_form.text_field :numero
 
       / .input-field
       /   = f.label 'Cargo: '
       /   = f.text_field :cargo
 
       .input-field
-        = f.text_field :crefito, placeholder: 'Crefito'
+        = f.label 'Crefito'
+        = f.text_field :crefito
 
-      .input-field
-        = f.submit
+      = f.submit 'Cadastrar', class: 'btn btn-total'
     .action
      = link_to 'Sign in', login_path

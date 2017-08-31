@@ -1,7 +1,7 @@
 .content
   .logo
 
-  h3.title Sign in
+  h3.title FisioUp
 
   = form_for :session, url: login_path do |f|
     .form-container
@@ -12,7 +12,6 @@
         = f.label 'Senha'
         = f.password_field :password
 
-      .input-field
-        = f.submit 'Sign in'
+      = f.submit 'Entrar', class: 'btn btn-total'
     .action
       = link_to 'Cadastrar-se', register_path

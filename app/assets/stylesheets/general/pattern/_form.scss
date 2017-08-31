@@ -1,43 +1,7 @@
-.input-field {
-  margin-top: 25px;
-
-  &:first-child { margin-top: 0px }
-
-  label {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    color: #706776;
-    margin-bottom: 10px;
-  }
-
-  input {
-    height: 35px;
-    width: 100%;
-    border: 1px solid #C3B7D3;
-    border-radius: 3px;
-    padding: 0 10px;
-
-    &[type='submit'] {
-      background-color: #7E46A6; 
-      color: white;
-    }
-  }
-
-  &.date_field {
-    margin-top: 15px;
-
-    label {
-      font-weight: normal;
-      margin-bottom: 5px;
-    }
-  }
-}
-
 .form-container {
   $container-width: 300px;
   width: $container-width;
-  margin: 0 auto;
+  margin: 20px auto 0;
   padding: 25px;
   border: 1px solid #C3B7D3;
   border-radius: 3px;
