@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
+  body
+    h1 Novo fisioterapeuta cadastrado!
+    p O usuário #{@usuario.nome} foi cadastrado. Segue abaixo os dados:
+    
+    p E-mail: #{@usuario.email}
+    p Crefito: #{@usuario.crefito}
+  
+    p Para liberar seu acesso, entre em #{@url} e clique no menu Equipe. 

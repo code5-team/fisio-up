@@ -4,6 +4,7 @@ module SessionsHelper
   def log_in(usuario)
     session[:usuario_id] = usuario.id
     session[:tempo_logado] = Time.now + 20.minutes
+    session[:admin] = usuario.admin
   end
   
   #Destruo a sessão
@@ -27,7 +28,7 @@ module SessionsHelper
   
   def is_admin?
     #avaliar a logica depois...
-    if usuario.admin == 1
+    if !session[:admin].nil? and session[:admin] == true
       true
     else
       false

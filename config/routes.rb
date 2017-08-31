@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   match 'profile' => 'usuarios#show', via: 'get'
   match 'edit' => 'usuarios#edit', via: 'get'
   match 'update' => 'usuarios#update', via: 'post'
+  match 'management' => 'usuarios#management', via: 'get'
   
   #match '/plantao' => 'plantoes#index', via: 'get' NAO CONSEGUI USAR
   #resources 'plantoes'

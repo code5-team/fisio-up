@@ -6,7 +6,8 @@ nav
         span.brand FisioUp
         ul
           li = link_to 'Calendário', :profile
-          li = link_to 'Equipe', '#'
+          - if is_admin? 
+            li = link_to 'Equipe', :management
           li = link_to 'Plantões', plantoes_path
           li.marc = link_to 'Sair', '/logout', method: :delete
       

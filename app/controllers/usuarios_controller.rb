@@ -1,5 +1,5 @@
 class UsuariosController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :show]
+  before_action :logged_in_user, only: [:edit, :update, :show, :management]
   
   def index
     render :new
@@ -21,10 +21,10 @@ class UsuariosController < ApplicationController
   
   def update
     @usuario = helpers.current_user
-    if @usuario.update_attributes(usuario_params)
+    if @usuario.authenticate(params[:usuario][:password_atual]) and @usuario.update_attributes(usuario_params)
       redirect_to action: 'show'
     else
-      render edit
+      render :edit
     end
     
   end
@@ -33,11 +33,18 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-       helpers.log_in @usuario #Crio a sessão do usuário
-       redirect_to action: 'show'
+      UsuarioMailer.notificacao_email(@usuario).deliver_later
+      helpers.log_in @usuario
+      redirect_to action: 'show'
     else
       render :new
     end
+  end
+  
+  #Gerenciar perfis...
+  def management
+    @usuario = helpers.current_user
+    @todosusuarios = Usuario.where(ativo: false)
   end
   
   #Faz logout e redireciono
