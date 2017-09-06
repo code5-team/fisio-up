@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511031601) do
+ActiveRecord::Schema.define(version: 20170829194713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 20170511031601) do
     t.string   "crefito"
     t.integer  "tipo_usuario_id"
     t.integer  "status_usuario_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "admin",             default: false
+    t.boolean  "ativo",             default: false
     t.index ["email"], name: "index_usuarios_on_email", using: :btree
     t.index ["status_usuario_id"], name: "index_usuarios_on_status_usuario_id", using: :btree
     t.index ["tipo_usuario_id"], name: "index_usuarios_on_tipo_usuario_id", using: :btree

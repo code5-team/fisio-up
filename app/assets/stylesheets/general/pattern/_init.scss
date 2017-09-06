@@ -10,7 +10,7 @@ body {
   font-family: $primary-font;
   font-size: 14px;
   main[role="main"] {
-    @include position(absolute, $header-height auto auto auto);
+    padding-top: $header-height;
     background: transparent;
     margin: 0;
     min-height: calc(100vh - 64px);

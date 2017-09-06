@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   #match '/plantao' => 'plantoes#index', via: 'get' NAO CONSEGUI USAR
   #resources 'plantoes'
   get '/plantoes', to: 'plantoes#index'
+  get '/formulas', to: 'formulas#index'
 
   delete '/logout', to: 'sessions#destroy'
   
