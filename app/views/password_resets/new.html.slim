@@ -1,0 +1,15 @@
+.content
+  .logo
+  
+  h3.title Recuperar senha
+  = form_for :password_reset, url: password_resets_path do |f|
+    .form-container
+      .input-field
+        = f.label 'E-mail'
+        = f.text_field :email
+      
+      = f.submit 'Enviar', class: 'btn btn-total'
+      
+    .action
+      = link_to 'Login', login_path
+  

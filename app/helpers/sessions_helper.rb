@@ -3,7 +3,7 @@ module SessionsHelper
   #Metódo responsável em logar o usuário na sessão
   def log_in(usuario)
     session[:usuario_id] = usuario.id
-    session[:tempo_logado] = Time.now + 20.minutes
+    session[:tempo_logado] = Time.now + 1.month
     session[:admin] = usuario.admin
   end
   

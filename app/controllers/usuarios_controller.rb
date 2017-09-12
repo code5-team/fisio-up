@@ -33,15 +33,15 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
 
     if @usuario.save
-      UsuarioMailer.notificacao_email(@usuario).deliver_later
+      # UsuarioMailer.notificacao_email(@usuario).deliver_later Envia e-mai, deixei comentado para não floodar nos testes
       helpers.log_in @usuario
       redirect_to action: 'show'
     else
-      render :new
+      render :new, layout: 'blank'
     end
   end
   
-  #Gerenciar perfis...
+  #Gerenciar perfis (construindo ainda...)
   def management
     @usuario = helpers.current_user
     @todosusuarios = Usuario.where(ativo: false)

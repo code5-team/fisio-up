@@ -6,4 +6,10 @@ class UsuarioMailer < ApplicationMailer
     @url = 'http://fisioup.herokuapp.com/'
     mail(to: 'matheus.oliveira@msn.com', subject: 'Novo Fisioterapeuta Cadastrado - FisioUp')
   end
+  
+  def reset_password(usuario)
+    @usuario = usuario
+    mail(to: @usuario.email, subject: "Reset da senha - FisioUp")
+  end
+  
 end

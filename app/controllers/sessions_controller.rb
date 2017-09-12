@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       helpers.log_in (usuario) #logo usuário em um metodo do helper. 
       redirect_to :controller => 'usuarios', :action => 'show', id: usuario
     else
-      flash[:danger] = 'Login ou senha inválidos'
+      flash.now[:error] = 'E-mail ou senha inválidos'
       render 'new', layout: 'blank'
     end
   end

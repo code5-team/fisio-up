@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  
-  # resources :usuarios
 
   root 'sessions#new'
 
-  #resources 'usuarios'
-  
   match 'login' => 'sessions#new', via: 'get'
   match 'login' => 'sessions#create', via: 'post'
   
@@ -22,9 +18,7 @@ Rails.application.routes.draw do
   get '/plantoes', to: 'plantoes#index'
 
   delete '/logout', to: 'sessions#destroy'
-  
-  #get '/login' => 'sessions#new'
-  #post '/login' => 'sessions#create'
+  resources :password_resets, only: [:new, :edit, :create, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

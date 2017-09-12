@@ -1,0 +1,18 @@
+.content
+  .logo
+  
+  h3.title Cadastrar nova senha
+  = form_for @usuario, url: password_reset_path(params[:id]) do |f|
+    .form-container
+      .input-field
+        = hidden_field_tag :email, @usuario.email
+        
+        = f.label 'Senha'
+        = f.password_field :password
+        
+        =f.label 'Confirme a senha'
+        = f.password_field :password_confirmation
+      
+      = f.submit 'Atualizar', class: 'btn btn-total'
+
+  

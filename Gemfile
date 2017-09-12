@@ -13,8 +13,10 @@ gem 'pry'
 #Usar o Postgresql
 gem 'pg'
 
+gem 'rails-i18n'
+
 #Para utilizar a criptografia no sistema
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt' 
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
