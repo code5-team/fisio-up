@@ -1,12 +1,219 @@
 #calcs.row
   .side-bar.col.s12.m4.l3
     ul
-      li#formula1 Formula 1
-      li#formula2 Formula 2
-      li#formula3 Formula 3
-      li#formula4 Formula 4
+      li#formula-1.formula
+        .waves-effect Índice de Oxigenação
+      li#formula-2.formula
+        .waves-effect Oxigênio Ideal
+      li#formula-3.formula 
+        .waves-effect Índice de RSS
+      li#formula-4.formula 
+        .waves-effect Complacidade Pulmonar Estática
+      li#formula-5.formula 
+        .waves-effect Complacidade Pulmonar Dinâmica
+      li#formula-6.formula 
+        .waves-effect Elastancia
+      li#formula-7.formula 
+        .waves-effect Resistência do Sistema Pulmonar
+      li#formula-8.formula 
+        .waves-effect Pressão Inspiratória Máxima para Homens
+      li#formula-9.formula 
+        .waves-effect Pressão Inspiratória Máxima para Mulheres
+      li#formula-10.formula 
+        .waves-effect Pressão Respiratória Máxima para Homens
+      li#formula-11.formula 
+        .waves-effect Pressão Respiratória Máxima para Mulheres
     
   .forms.col.s12.m8.l9.offset-m4.offset-l3
-    .contCalculos 
-        .h3 Aqui será o local para as fórmulas
+    .conteudo-calculos
+      //FORMULA 1 - Índice de Oxigenação
+      #form-1.form-grid.active
+        h4.title Índice de Oxigenação
         
+        h5.subtitle Digite os valores:
+        .row
+          .col.s6.input-field
+            input#vl1-form1 type='text'
+            label for='vl1-form1' Pressão de oxigênio no sangue (PaO2)
+           
+          .col.s6.input-field
+            input#vl2-form1 type='text'
+            label for='vl2-form1' Fração de oxigênio (FIO2)
+
+          span.resultado-tela
+        
+        button.waves-purple.btn#bto-form1 type='submit' Calcular
+
+
+         
+      //FORMULA 2 - Oxigênio Ideal      
+      #form-2.form-grid
+        h4.title Oxigênio Ideal
+
+        h5.subtitle Digite o valor:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form2 type='text'
+            label for='vl1-form2' Idade para oxigênio ideal
+          span.resultado-tela
+        
+        button.waves-purple.btn#bto-form2 type='submit' Calcular
+
+      //FORMULA 3 - Índice de RSS  
+      #form-3.form-grid 
+        h4.title Índice de RSS
+        
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form3 type='text'
+            label Frequência respiratória (FR)
+          
+          .col.s6.input-field  
+            input#vl2-form3 type='text'
+            label Volume Corrente (VR)
+          
+          span.resultado-tela  
+        button.waves-purple.btn#bto-form3 type='submit' Calcular
+
+      //FORMULA 4 - Complacidade Pulmonar Estática  
+      #form-4.form-grid 
+        h4.title Complacidade Pulmonar Estática
+        
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form4 type='text'
+            label for='vl1-form4' Volume Corrente
+          
+          .col.s6.input-field  
+            input#vl2-form4 type='text'
+            label for='vl2-form4' Pressao de Plato
+          
+          .col.s6.input-field  
+            input#vl3-form4 type='text'
+            label for='vl3-form4' Peep
+
+          span.resultado-tela
+        button.waves-purple.btn#bto-form4 type='submit' Calcular
+      
+
+      //FORMULA 5 - Complacidade Pulmonar Dinâmica  
+      #form-5.form-grid 
+        h4.title Complacidade Pulmonar Dinâmica
+        
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form5 type='text'
+            label for='vl1-form5' Volume Corrente
+          
+          .col.s6.input-field  
+            input#vl2-form5 type='text'
+            label for='vl2-form5' Pressão de Plato
+          
+          .col.s6.input-field
+            input#vl3-form5 type='text'
+            label for='vl3-form5' Peep
+        
+          span.resultado-tela
+        button.waves-purple.btn#bto-form5 type='submit' Calcular    
+      
+      //FORMULA 6 - Elastancia
+      #form-6.form-grid 
+        h4.title Elastancia
+
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form6 type='text'
+            label for='vl1-form6' Pressão de Plato
+          
+          .col.s6.input-field
+            input#vl2-form6 type='text'
+            label for='vl2-form6' Peep
+          
+          .col.s6.input-field
+            input#vl3-form6 type='text'
+            label for='vl3-form6' Volume Corrente 
+          
+          span.resultado-tela  
+        button.waves-purple.btn#bto-form6 Calcular
+      
+      //FORMULA 7 - Resistência do Sistema Pulmonar
+      #form-7.form-grid
+        h4.title Resistência do Sistema Pulmonar
+
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form7 type='text'
+            label for='vl1-form7' Pressão de Pico
+          
+          .col.s6.input-field  
+            input#vl2-form7 type='text'
+            label for='vl2-form7' Pressão de Plato
+          
+          .col.s6.input-field
+            input#vl3-form7 type='text'
+            label for='vl3-form7' Fluxo
+        
+          span.resultado-tela 
+        button.waves-purple.btn#bto-form7 type='submit' Calcular
+
+      //FORMULA 8 - Pressão Inspiratória Máxima para Homens
+      #form-8.form-grid
+        h4.title Pressão Inspiratória Máxima para Homens
+       
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field         
+            input#vl1-form8 type='text'
+            label for='vl1-form8' Idade
+          span.resultado-tela
+        button.waves-purple.btn#bto-form8 type='submit' Calcular
+
+
+      #form-9.form-grid
+        h4.title Pressão Inspiratória Máxima para Mulheres
+      
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field   
+            input#vl1-form9 type='text'
+            label for='vl1-form9' Idade 
+          span.resultado-tela
+        button.waves-purple.btn#bto-form9 type='submit' Calcular
+
+      #form-10.form-grid
+        h4.title Pressão Respiratória Máxima para Homens
+        
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field    
+            input#vl1-form10 type='text'
+            label for='vl1-form10' Idade
+          span.resultado-tela
+        button.waves-purple.btn#bto-form10 type='submit' Calcular
+
+
+      #form-11.form-grid
+        h4.title Pressão Respiratória Máxima para Mulheres
+        
+        h5.subtitle Digite os valores:
+        
+        .row
+          .col.s6.input-field
+            input#vl1-form11 type='text'
+            label for='vl1-form11' Idade
+          span.resultado-tela
+        button.waves-purple.btn#bto-form11 type='submit' Calcular
