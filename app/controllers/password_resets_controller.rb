@@ -16,7 +16,7 @@ def create
   if !@usuario.nil?
     @usuario.create_reset_digest
     @usuario.envia_reset_password
-    flash[:info] = 'Foi enviado um e-mail com instruções para o reset de senha'
+    flash[:info] = 'Foi enviado um e-mail com instruções para o reset de senha!'
     redirect_to root_url
   else
     flash[:danger] = 'Não foi localizado o e-mail cadastrado'
