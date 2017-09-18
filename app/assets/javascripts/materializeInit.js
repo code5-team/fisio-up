@@ -1,6 +1,7 @@
 var input = $('.materialize-datepicker').pickadate({
   selectMonths: true,
-  selectYears: 15,
+  selectYears: 70,
+  max: true,
   closeOnSelect: false,
   labelMonthNext: 'Proximo Mês',
   labelMonthPrev: 'Mês Anterior',
