@@ -7,26 +7,50 @@
     position: absolute;
     height: 100%;
     background: $secundary-color;
+    padding-top: 28px;
     
 
     ul li {
-      height: 44px;
-      line-height:44px;
-      padding-left: 15px;
-
+      min-height: 44px;
+      line-height:20px;
+      //padding-left: 15px;
+      padding: 10px;
+      
       &.filter-title { padding-left: 0 }
+      &.active { font-weight: bold }
     }
-  }
-
-  .forms {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
     
+  
   }
 
-  .contCalculos{
-    width: 100%;
+  
+  .form-grid{
+    display: none;
+    .form-grid h4 { margin-bottom: 10px }
+    &.active { display: block }
+  }
+  
+  .forms { padding: 20px }
+    
+  .conteudo-calculos{ width: 100% }
 
+  .subtitle{
+    font-size: 14px;
+    margin-top: 60px;
+  }
+
+  .btn{
+    display: block;
+    width: 160px;
+  }
+  .resultado-tela{
+    font-weight:bold;
+  }
+  .input-field.col label{
+    font-size: 13px;
   }
 }
+
+
+
+
