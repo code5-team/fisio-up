@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   match 'update' => 'usuarios#update', via: 'post'
   match 'management' => 'usuarios#management', via: 'get'
   
+  match 'update_management' => 'usuarios#update_management', via: :post
+  
+  
   #match '/plantao' => 'plantoes#index', via: 'get' NAO CONSEGUI USAR
   #resources 'plantoes'
   get '/plantoes', to: 'plantoes#index'
@@ -20,6 +23,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
   resources :password_resets, only: [:new, :edit, :create, :update]
+  
+  #resources :usuarios, :collection => { :edit_management => :post, :update_management => :put }
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

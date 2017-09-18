@@ -1,13 +1,26 @@
-h3.title Liberação de cadastros
+center
+  = flash.now[:notice] unless flash[:notice].blank?
 
-- @todosusuarios.each do |usuarios|
-  ul 
-    li 
-      = usuarios.nome
-  
-    li 
-      = usuarios.email
+- unless @todosusuarios.empty?
+  = form_tag(update_management_path) do
+    .table-users
+      .header Liberação de cadastros
     
-    li 
-      = usuarios.crefito
-      
+      table class = "table-final"
+        tr
+          th Nome
+          th Email
+          th Crefito
+          th Aprovação
+
+        - for usuario in @todosusuarios
+          tr
+            td = usuario.nome
+            td = usuario.email
+            td = usuario.crefito
+            td = submit_tag 'Aprovar'
+          = hidden_field_tag :usuario_id, usuario.id
+
+
+
+   

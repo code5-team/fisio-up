@@ -34,8 +34,7 @@ class UsuariosController < ApplicationController
 
     if @usuario.save
       # UsuarioMailer.notificacao_email(@usuario).deliver_later Envia e-mai, deixei comentado para não floodar nos testes
-      helpers.log_in @usuario
-      redirect_to action: 'show'
+      redirect_to root_url, :notice => "Cadastro realizado com sucesso! Aguarde a aprovação pela gestora."
     else
       render :new, layout: 'blank'
     end
@@ -44,8 +43,18 @@ class UsuariosController < ApplicationController
   #Gerenciar perfis (construindo ainda...)
   def management
     @usuario = helpers.current_user
-    @todosusuarios = Usuario.where(ativo: false)
+    @todosusuarios ||= Usuario.where(ativo: false)
+    if @todosusuarios.blank?
+      flash.now[:notice] = "Não há nenhum usuário para ter o acesso liberado."
+    end
   end
+  
+  def update_management
+    @todosusuarios = Usuario.find(params[:usuario_id])
+    @todosusuarios.update_attributes(ativo: true)
+    redirect_to action: 'management'
+  end
+  
   
   #Faz logout e redireciono
   def destroy

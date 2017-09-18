@@ -13,8 +13,13 @@ class SessionsController < ApplicationController
     usuario = Usuario.find_by(email: params[:session][:email].downcase)
     
     if !usuario.nil? && usuario.authenticate(params[:session][:password])
+      if usuario.ativo == false
+        flash[:notice] = "Aguarde a aprovação da gestora!"
+        redirect_to root_url
+      else
       helpers.log_in (usuario) #logo usuário em um metodo do helper. 
       redirect_to :controller => 'usuarios', :action => 'show', id: usuario
+      end
     else
       flash.now[:error] = 'E-mail ou senha inválidos'
       render 'new', layout: 'blank'
