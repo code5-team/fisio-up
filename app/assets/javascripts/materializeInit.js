@@ -1,4 +1,4 @@
-$('.materialize-datepicker').pickadate({
+var input = $('.materialize-datepicker').pickadate({
   selectMonths: true,
   selectYears: 15,
   closeOnSelect: false,
@@ -15,4 +15,8 @@ $('.materialize-datepicker').pickadate({
   clear: 'Limpar',
   close: 'Fechar',
   format: 'dd/mm/yyyy'
-});
+}),
+    picker = input.pickadate('picker');
+if (picker) {
+  picker.set('select', $('.materialize-datepicker').val(), {format: 'yyyy-mm-dd'}).trigger('change');
+}

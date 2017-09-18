@@ -5,12 +5,12 @@ $('#calendar').fullCalendar({
   events: [
     {
       title: 'Event1',
-      start: '2017-08-21',
+      start: '2017-09-21',
       editable: true
     },
     {
       title: 'Event2',
-      start: '2017-08-22',
+      start: '2017-09-22',
       editable: true,
       color: 'yellow',
       textColor: 'black'

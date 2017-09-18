@@ -10,16 +10,17 @@ body {
   font-family: $primary-font;
   font-size: 14px;
   main[role="main"] {
-    padding-top: $header-height;
     background: transparent;
     margin: 0;
     min-height: calc(100vh - 64px);
+    padding-top: $header-height;
     z-index: 0;
   }
 
   &.no-header {
     main[role="main"] {
       @include position(relative, 0 0 0 0);
+      padding-top: 0;
     }
   }
 }

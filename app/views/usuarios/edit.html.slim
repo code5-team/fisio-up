@@ -1,26 +1,27 @@
-h3.title Edite seu perfil
-= form_for @usuario, url: update_path, method: :POST do |f|
-  .form-container
-    = f.label 'Nome: '
-    = f.text_field :nome, :value => @usuario.nome
-    p
-    = f.label 'E-mail: '
-    = f.text_field :email, :value => @usuario.email
-    p
-    = f.label 'Senha Atual: '
-    = f.password_field :password_atual
-    p
-    = f.label 'Nova Senha: '
-    = f.password_field :password
-    p
-    = f.label 'Confirme a nova senha: '
-    = f.password_field :password_confirmation
-    p
-    = f.label 'Data de nascimento: '
-    = date_field("usuario", "datanascimento", :value => @usuario.datanascimento)
-    p
-    = f.label 'Crefito'
-    = f.text_field :crefito, :value => @usuario.crefito
-    = f.submit 'Salvar'
-    p
-    = link_to 'Voltar', :back
+.content
+  h3.title Edite seu perfil
+  = form_for @usuario, url: update_path, method: :POST do |f|
+    .form-container
+      .input-field
+        = f.label 'Nome'
+        = f.text_field :nome, :value => @usuario.nome
+      .input-field
+        = f.label 'E-mail'
+        = f.text_field :email, :value => @usuario.email
+      .input-field
+        = f.label 'Senha Atual'
+        = f.password_field :password_atual
+      .input-field
+        = f.label 'Nova Senha'
+        = f.password_field :password
+      .input-field
+        = f.label 'Confirme a nova senha'
+        = f.password_field :password_confirmation
+      .date_field
+        = f.label 'Data de nascimento: '
+        = f.text_field :datanascimento, :value => @usuario.datanascimento, class: 'materialize-datepicker'
+      .input-field
+        = f.label 'Crefito'
+        = f.text_field :crefito, :value => @usuario.crefito
+
+      = f.submit 'Salvar', class: 'btn btn-total'
