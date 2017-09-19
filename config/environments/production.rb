@@ -55,7 +55,24 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "fisio-up_#{Rails.env}"
-  config.action_mailer.perform_caching = false
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_caching = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.default_url_options = { :host => "fisioup.herokuapp.com" }
+  
+  config.action_mailer.smtp_settings = {
+   address:              'smtp.gmail.com',
+   port:                 587,
+   domain:               'gmail.com',
+   user_name:            'code5.development@gmail.com',
+   password:             'fisioup.code5',
+   authentication:       'plain',
+   enable_starttls_auto: true  
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
