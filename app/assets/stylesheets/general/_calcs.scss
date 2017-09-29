@@ -4,11 +4,11 @@
   
 
   .side-bar {
-    position: absolute;
-    height: 100%;
     background: $secundary-color;
+    color: #fff;
+    height: 100%;
     padding-top: 28px;
-    
+    position: absolute;
 
     ul li {
       min-height: 44px;
