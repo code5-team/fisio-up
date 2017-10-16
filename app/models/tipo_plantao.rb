@@ -1,0 +1,2 @@
+class TipoPlantao < ApplicationRecord
+end

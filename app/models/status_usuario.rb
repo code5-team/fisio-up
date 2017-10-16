@@ -1,3 +1,0 @@
-class StatusUsuario < ApplicationRecord
-  
-end

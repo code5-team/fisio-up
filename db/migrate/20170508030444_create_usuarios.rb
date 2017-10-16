@@ -6,8 +6,6 @@ class CreateUsuarios < ActiveRecord::Migration[5.0]
       t.string :senha_criptografada
       t.date :datanascimento
       t.string :crefito
-      t.references :tipo_usuario, foreign_key: true
-      t.references :status_usuario, foreign_key: true
 
       t.timestamps
     end
