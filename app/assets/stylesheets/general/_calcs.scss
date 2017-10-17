@@ -19,12 +19,10 @@
       &.filter-title { padding-left: 0 }
       &.active { font-weight: bold }
     }
-    
-  
   }
 
   
-  .form-grid{
+  .form-grid {
     display: none;
     .form-grid h4 { margin-bottom: 10px }
     &.active { display: block }
@@ -34,21 +32,18 @@
     
   .conteudo-calculos{ width: 100% }
 
-  .subtitle{
+  .subtitle {
     font-size: 14px;
     margin-top: 60px;
   }
 
-  .btn{
+  .btn {
     display: block;
     width: 160px;
   }
-  .resultado-tela{
-    font-weight:bold;
-  }
-  .input-field.col label{
-    font-size: 13px;
-  }
+
+  .resultado-tela { font-weight:bold }
+  .input-field.col label { font-size: 13px }
 }
 
 
