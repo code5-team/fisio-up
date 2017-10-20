@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require moment
 //= require fullcalendar
+//= require fullcalendar/lang/pt-br
 //= require materialize
 //= require materializeInit
 //= require_tree .

@@ -1,6 +1,6 @@
 $('#calendar').fullCalendar({
   header: {
-    right:  'agendaDay,agendaWeek,today prev,next'
+    right:  'agendaWeek,month,today prev,next'
   },
     selectable: true,
     selectHelper: true,
