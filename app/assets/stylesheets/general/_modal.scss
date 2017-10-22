@@ -6,17 +6,29 @@ body.modal-opened {
     z-index: 99;
 
     #modal-overlay {
-      @include position(absolute, 0 0 0 0);
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 10;
+      visibility: visible;
+      opacity: 1;
     }
 
-    #remote-container {
-      @include position(absolute, 0 0 0 25%);
-      background: #fff;
-      z-index: 11;
-    }
+    #remote-container { left: 25% }
   }
 }
 
-#modal { display: none }
+#modal {
+  #modal-overlay {
+    @include position(fixed, 0 0 0 0);
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: all .6s;
+    z-index: 10;
+  }
+  #remote-container {
+    @include position(fixed, 0 0 0 100%);
+    background: #fff;
+    padding: 20px;
+    transition: all .6s;
+    width: 75%;
+    z-index: 11;
+  }
+}
