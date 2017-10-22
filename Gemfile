@@ -28,6 +28,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'slim'
 gem 'coffee-rails'
 gem 'font-awesome-sass'
+gem 'simple_form'
+gem 'turbolinks'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -36,6 +38,7 @@ gem 'momentjs-rails'
 gem 'uglifier'
 gem 'materialize-sass'
 gem 'bourbon'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'

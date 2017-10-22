@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:edit, :show, :update]
   
   def index
     @events = Event.all
@@ -6,9 +7,10 @@ class EventsController < ApplicationController
   end
   
   def new
-    @todasunidades = Unidade.all
-    @usuario = helpers.current_user
-    @event = @usuario.events.build
+    #@todasunidades = Unidade.all
+    #@usuario = helpers.current_user
+    #@event = @usuario.events.build
+    @event = Event.new
     #@usuario.events.build
   end
   
@@ -26,4 +28,7 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :start, :end, :usuario_id => @usuario.id)
   end
   
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end

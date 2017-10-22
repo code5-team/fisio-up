@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'sessions#new'
+  
+  resources :events
 
   match 'login' => 'sessions#new', via: 'get'
   match 'login' => 'sessions#create', via: 'post'

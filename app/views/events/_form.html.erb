@@ -1,0 +1,7 @@
+<%= simple_form_for @event, remote: true do |f| %>
+    <%= f.input :title, label: 'Titulo' %>
+    <%= f.input :start, label: 'Inicio' %>
+    <%= f.input :end, label: 'Fim' %>
+    <%= f.input :observaco, label: 'Observação:' %>
+<%= f.button :submit %>
+<% end %>

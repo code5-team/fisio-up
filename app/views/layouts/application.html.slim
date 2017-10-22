@@ -11,6 +11,8 @@ html
   body
     = render 'layouts/header'
     main role='main'
+      .container
+      #remote_container
       = yield
 
     = javascript_include_tag 'application'

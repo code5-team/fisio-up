@@ -95,3 +95,19 @@ TipoPlantao.create!(descricao: 'disponivel')
 TipoPlantao.create!(descricao: 'ocupado')
 TipoPlantao.create!(descricao: 'aguardando encerramento')
 puts "Gerando os tipos de plantão[OK]..."
+
+puts "Gerando unidades..."
+Unidade.create!(nome: 'Clinica Dona Isabel',
+                localizacao: 'Vila Olimpia',
+                tipo_unidade_id: 1)
+                
+puts "Gerando unidades[OK]..."
+
+puts "gerando eventos de teste"
+Event.create!(title: "Matheus Oliveira",
+              start: "2017-10-21 09:00:00",
+              end: "2017-10-21 18:00:00",
+              usuario_id: 2,
+              unidade_id: 1)
+              
+puts "gerando eventos de tests [OK]"
