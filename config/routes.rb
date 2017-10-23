@@ -22,6 +22,12 @@ Rails.application.routes.draw do
   #resources 'plantoes'
   get '/plantoes', to: 'plantoes#index'
   get '/formulas', to: 'formulas#index'
+  get '/unidade', to: 'unidade#index'
+
+  resources :unidade
+
+  match '/unidade/:id' => 'unidade#destroy', via: 'delete', as: :destroy_unidade
+  match '/unidade/:id' => 'unidade#update', via: 'put', as: :update_unidade
 
   delete '/logout', to: 'sessions#destroy'
   resources :password_resets, only: [:new, :edit, :create, :update]

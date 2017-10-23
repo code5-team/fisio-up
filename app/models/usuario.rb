@@ -11,7 +11,7 @@ class Usuario < ApplicationRecord
   #Associações
   has_many :telefones, inverse_of: :usuario #Inverse_of evita consulta no banco para recuperar o objeto, recupero da memória. 
   accepts_nested_attributes_for :telefones
-
+  has_many :events
   #Usado para descriptografar a senha do usuario no login, usando o metodo authenticate do Bcrypt (controllers/sessions)
   has_secure_password
   

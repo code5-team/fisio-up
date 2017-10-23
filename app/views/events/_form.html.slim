@@ -1,7 +1,12 @@
+= flash.now[:plantao] unless flash[:plantao].blank?
 = simple_form_for @event, remote: true do |f|
-  = f.input :title, label: 'Titulo'
-  = f.input :start, label: 'Inicio'
-  = f.input :end, label: 'Fim'
-  = f.input :observaco, label: 'Observação:'
-
-  = f.button :submit
+  = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
+  = f.hidden_field :usuario_id, value: @usuario.id
+  
+  = f.input :date_range, label: 'Período: ', disabled: true
+  = f.input_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden'
+  = f.input_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' 
+  
+  = f.input_field :title, as: :hidden, value: @usuario.nome
+  = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
+  = f.button :submit, "Concluir"

@@ -21,3 +21,5 @@ var input = $('.materialize-datepicker').pickadate({
 if (picker) {
   picker.set('select', $('.materialize-datepicker').val(), {format: 'yyyy-mm-dd'}).trigger('change');
 }
+
+$('select').material_select();

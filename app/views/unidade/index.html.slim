@@ -1,0 +1,31 @@
+.container
+  .row.title
+    .col Unidades
+    .col.right = link_to 'Criar Unidade', new_unidade_path, class: 'btn'
+
+  .content
+    - if @todasunidades.empty?
+      .center Não há unidades cadastradas!
+    - else
+      table.highlight
+        thead
+          tr
+            th Nome
+            th Localização
+            th Tipo
+            th 8H
+            th 12H
+            th
+        tbody
+          - @todasunidades.each do |unidade|
+            tr
+              td = unidade.nome
+              td = unidade.localizacao
+              td = @tipo_unidade.find(unidade.tipo_unidade_id).descricao
+              td
+                i.tiny.material-icons.green-text = unidade.oitohoras? ? 'check' : 'remove'
+              td
+                i.tiny.material-icons.green-text = unidade.dozehoras? ? 'check' : 'remove'
+              td
+                = link_to edit_unidade_path(unidade) do
+                  i.tiny.material-icons.deep-purple-text edit

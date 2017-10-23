@@ -1,0 +1,9 @@
+- @button_text = 'Salvar'
+- @path = update_unidade_path(@unidade)
+
+.container
+  .row.title
+    .col Editar unidade
+    .col.right = link_to 'Excluir', destroy_unidade_path(@unidade), :method => 'delete', data: {confirm: 'Tem certeza?'}, class: 'btn'
+
+  = render 'form'

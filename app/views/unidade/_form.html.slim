@@ -1,0 +1,36 @@
+= form_for @unidade, url: @path do |f|
+
+  - if @unidade.errors.any?
+    - @unidade.errors.full_messages.each do |message|
+      p = message
+
+  .input-field
+    = f.label 'Nome'
+    = f.text_field :nome
+
+  .input-field
+    = f.label 'Localização'
+    = f.text_field :localizacao
+
+  .row
+
+    .col.s6.input-field
+      = f.collection_select :tipo_unidade_id, @tipo_unidade, :id, :descricao
+      = f.label 'Tipo'
+
+    .col.right
+      .switch
+        label
+          = f.check_box :oitohoras
+          span.lever
+          | 8 Horas
+      p
+
+      .switch
+        label
+          = f.check_box :dozehoras
+          span.lever
+          | 12 Horas
+      p
+
+  = f.submit @button_text, class: 'btn right'
