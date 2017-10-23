@@ -1,0 +1,19 @@
+footer {
+  z-index: 1;
+
+  > * {
+    padding: 10px 20px !important;
+    margin: 0;
+  }
+}
+
+//footer always on bottom
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
