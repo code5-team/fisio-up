@@ -1,8 +1,5 @@
 = simple_form_for @event, remote: true do |f|
-  - unless @event.title.empty?
-    = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @event.title}
-  - else
-    = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
+  = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
     
   = f.hidden_field :usuario_id, value: @usuario.id
   
