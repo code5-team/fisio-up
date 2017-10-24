@@ -1,0 +1,17 @@
+= simple_form_for @event, remote: true do |f|
+  - unless @event.title.empty?
+    = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @event.title}
+  - else
+    = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
+    
+  = f.hidden_field :usuario_id, value: @usuario.id, disabled: true
+  
+  = f.input :start, label: 'Início',as: :datetime, html5: true, disabled: true
+  = f.input :end, label: 'Fim',as: :datetime, html5: true, disabled: true
+  
+  = f.input_field :title, as: :hidden, value: @usuario.nome, disabled: true
+  = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica', disabled: true
+  
+  = link_to 'Voltar', :back
+  
+  

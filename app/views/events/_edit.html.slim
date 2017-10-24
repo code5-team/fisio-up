@@ -1,2 +1,6 @@
-h4 Editar o plantão
-= render 'form', event: @event
+- unless @usuario.id == @event.usuario_id
+  h4 Visualizar Plantão
+  = render 'show', event: @event
+- else
+  h4 Editar Plantão
+  = render 'form', event: @event
