@@ -1,20 +1,22 @@
 nav
+  .sandwich
   .nav-wrapper
-    .side-bar
-      .valign-wrapper.left
-        = link_to '', 'profile', class: 'logo-nav'
-        span.brand FisioUp
-        ul
-          li = link_to 'Calendário', :profile
-          - if is_admin? 
-            li = link_to 'Equipe', :management
-          li = link_to 'Plantões', plantoes_path
-          li = link_to 'Fórmulas', formulas_path
-          li = link_to 'Unidades', unidade_path
-          li.marc = link_to 'Sair', '/logout', method: :delete
-      
-      .valign-wrapper.right
-        span
-          | Olá, 
-          = @usuario.nome
-        = link_to '', :edit, class: 'user-icon'
+    .user.valign-wrapper.right
+      span.hello
+        | Olá,
+      span.user-name = @usuario.nome
+      = link_to '', :edit, class: 'user-icon'
+
+    .menu.valign-wrapper.left
+      = link_to '', 'profile', class: 'logo-nav'
+      span.brand FisioUp
+      ul
+        li = link_to 'Calendário', :profile
+        - if is_admin?
+          li = link_to 'Equipe', :management
+        li = link_to 'Plantões', plantoes_path
+        li = link_to 'Fórmulas', formulas_path
+        li = link_to 'Unidades', unidade_path
+        li.marc = link_to 'Sair', '/logout', method: :delete
+
+  .nav-overlay

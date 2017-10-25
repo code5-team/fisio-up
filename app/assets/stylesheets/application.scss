@@ -12,9 +12,8 @@ $link-color: rgba( #c00, 1) !default;
 @import 'bourbon';
 
 @import 'general/pattern/*';
-@import 'general/header';
-@import 'general/footer';
-@import 'general/home';
-@import 'general/calendar';
-@import 'general/calcs';
-@import 'general/modal';
+@import 'general/*';
+
+@media screen and (max-width: $low_size) {
+  @import 'mobile/*'
+}

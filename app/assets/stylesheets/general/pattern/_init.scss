@@ -25,6 +25,9 @@ body {
   }
 }
 
+body.nav-opened,
+body.modal-opened { overflow: hidden }
+
 .content > * {
   margin: 0 auto;
   padding-bottom: 40px;

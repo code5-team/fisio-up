@@ -1,17 +1,14 @@
-body.modal-opened {
-  overflow: hidden;
-  #modal {
-    @include position(fixed, 0 0 0 0);
-    display: block;
-    z-index: 99;
+#modal.opened {
+  @include position(fixed, 0 0 0 0);
+  display: block;
+  z-index: 99;
 
-    #modal-overlay {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    #remote-container { left: 25% }
+  #modal-overlay {
+    visibility: visible;
+    opacity: 1;
   }
+
+  #remote-container { left: 25% }
 }
 
 #modal {
