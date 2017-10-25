@@ -1,0 +1,16 @@
+= simple_form_for @event, remote: true do |f|
+  = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
+    
+  = f.hidden_field :usuario_id, value: @usuario.id
+  
+  = f.hidden_field :start
+  = f.hidden_field :end
+  
+  = f.input_field :title, as: :hidden, value: @usuario.nome
+  - if @event.start < Date.today
+      = f.input :tipo_atendimento, disabled: true, label: 'Atendimento: ', as: :select , collection: [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], input_html: {class: 'browser-default'}
+  - else
+      = f.input :tipo_atendimento, label: 'Atendimento: ', as: :select , collection: [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], input_html: {class: 'browser-default'}
+  = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
+  = f.button :submit, "Concluir"
+  

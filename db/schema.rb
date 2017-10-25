@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018223821) do
+ActiveRecord::Schema.define(version: 20171025213557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20171018223821) do
     t.boolean  "editable"
     t.integer  "unidade_id"
     t.integer  "usuario_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "observaco"
+    t.integer  "tipo_atendimento"
     t.index ["unidade_id"], name: "index_events_on_unidade_id", using: :btree
     t.index ["usuario_id"], name: "index_events_on_usuario_id", using: :btree
   end

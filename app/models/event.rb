@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-  attr_accessor :date_range, :atendimento, :data_atual
+  attr_accessor :date_range, :data_atual
 end

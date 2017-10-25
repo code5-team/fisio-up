@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   
   def create
     eventoParametro = event_params
-    horarioinicial = DateTime.parse(eventoParametro[:start],'%Y-%m-%dT%H:%M:%S' )
+    horarioinicial = DateTime.parse(eventoParametro[:start],'%Y-%m-%dT%H:%M:%S')
     atendimento = eventoParametro[:atendimento]
     
     if atendimento == '1' #Atendimento matutino
@@ -41,13 +41,30 @@ class EventsController < ApplicationController
   end
 
   def update
-    @usuario = helpers.current_user
-    @event.update(event_params)
+    
+    eventoParametro = event_params
+    binding.pry
+    horarioinicial = DateTime.parse(eventoParametro[:start],'%Y-%m-%dT00:00:00%z' )
+    atendimento = eventoParametro[:atendimento]
+    
+    if atendimento == '1' #Atendimento matutino
+      eventoParametro[:start] = horarioinicial + 7.hours
+      eventoParametro[:end] = eventoParametro[:start]  + 12.hours
+    elsif atendimento == '2' #Atendimento vespertino
+      eventoParametro[:start] = horarioinicial + 19.hours
+      eventoParametro[:end] = eventoParametro[:start]  + 12.hours
+    else
+      eventoParametro[:start] = horarioinicial + 8.hours
+      eventoParametro[:end] = eventoParametro[:start]  + 9.hours
+    end
+    
+    
+    @event.update(eventoParametro)
   end
   
   private 
   def event_params
-    params.require(:event).permit(:title, :start, :end, :observaco, :usuario_id, :atendimento,:unidade_id => 1)
+    params.require(:event).permit(:title, :start, :end, :observaco, :usuario_id, :tipo_atendimento,:unidade_id => 1)
   end
   
   def set_event
