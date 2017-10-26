@@ -12,6 +12,4 @@
   = f.input_field :title, as: :hidden, value: @usuario.nome, disabled: true
   = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica', disabled: true
   
-  = link_to 'Voltar', :back
-  
-  
+  = f.button :button, "Concluir"

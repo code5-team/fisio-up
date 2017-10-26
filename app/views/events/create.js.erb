@@ -1,6 +1,7 @@
-$('.calendar').fullCalendar(
+$('#calendar').fullCalendar(
   'renderEvent', 
   $.parseJSON("<%=j render(@event, format: :json).html_safe %>"),
   true
 );
-$('.modal').modal('hide');
+$('body').removeClass('modal-opened');
+$('#modal').removeClass('opened');

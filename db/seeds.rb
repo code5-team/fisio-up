@@ -32,7 +32,18 @@ Usuario.create!(nome: 'Matheus Oliveira',
                    { numero: '1156315601'}
                   ]
               )
-              
+
+Usuario.create!(nome: 'Lucas almeida', 
+                email: 'lucas.almeida@msn.com', 
+                crefito: "152030",
+                datanascimento: '2017-06-01',
+                admin: true,
+                ativo: true,
+                password_digest: Usuario.digest("teste"),
+                telefones_attributes: [
+                   { numero: '1156315601'}
+                  ]
+              )              
 puts "Criando os cadastros de testes..."
 
 Usuario.create!(nome: 'Teste da Silva', 
@@ -104,10 +115,115 @@ Unidade.create!(nome: 'Clinica Dona Isabel',
 puts "Gerando unidades[OK]..."
 
 puts "gerando eventos de teste"
+
+cedo ='#ff6f00'
+tarde = '#424242'
+adm = '#0d47a1'
+
 Event.create!(title: "Matheus Oliveira",
-              start: "2017-10-21 09:00:00",
-              end: "2017-10-21 18:00:00",
+              start: "2017-10-21 07:00:00",
+              end: "2017-10-21 19:00:00",
               usuario_id: 2,
-              unidade_id: 1)
+              unidade_id: 1,
+              tipo_atendimento: 1,
+              color: cedo)
+
+Event.create!(title: "Code5 Development",
+              start: "2017-10-21 19:00:00",
+              end: "2017-10-22 07:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 2,
+              color: tarde)    
+
+Event.create!(title: "Lucas Almeida",
+              start: "2017-10-21 08:00:00",
+              end: "2017-10-21 17:00:00",
+              usuario_id: 3,
+              unidade_id: 1,
+              tipo_atendimento: 3,
+              color: adm)   
+              
+              
+              
+Event.create!(title: "Matheus Oliveira",
+              start: "2017-10-24 07:00:00",
+              end: "2017-10-24 19:00:00",
+              usuario_id: 2,
+              unidade_id: 1,
+              tipo_atendimento: 1,
+              color: cedo)
+
+Event.create!(title: "Code5 Development",
+              start: "2017-10-24 19:00:00",
+              end: "2017-10-25 07:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 2,
+              color: tarde)    
+
+Event.create!(title: "Lucas Almeida",
+              start: "2017-10-23 08:00:00",
+              end: "2017-10-23 17:00:00",
+              usuario_id: 3,
+              unidade_id: 1,
+              tipo_atendimento: 3,
+              color: adm)  
+              
+Event.create!(title: "Matheus Oliveira",
+              start: "2017-10-01 19:00:00",
+              end: "2017-10-02 07:00:00",
+              usuario_id: 2,
+              unidade_id: 1,
+              tipo_atendimento: 2,
+              color: tarde)
+              
+Event.create!(title: "Code5 Development",
+              start: "2017-10-22 08:00:00",
+              end: "2017-10-22 17:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 3,
+              color: adm)
+              
+Event.create!(title: "Code5 Development",
+              start: "2017-10-23 08:00:00",
+              end: "2017-10-23 17:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 3,
+              color: adm)
+              
+Event.create!(title: "Code5 Development",
+              start: "2017-10-15 19:00:00",
+              end: "2017-10-16 07:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 2,
+              color: tarde)
+              
+Event.create!(title: "Lucas almeida",
+              start: "2017-10-29 08:00:00",
+              end: "2017-10-29 17:00:00",
+              usuario_id: 3,
+              unidade_id: 1,
+              tipo_atendimento: 3,
+              color: adm) 
+              
+Event.create!(title: "Matheus Oliveira",
+              start: "2017-10-27 07:00:00",
+              end: "2017-10-27 19:00:00",
+              usuario_id: 2,
+              unidade_id: 1,
+              tipo_atendimento: 1,
+              color: cedo)
+              
+Event.create!(title: "Code5 Development",
+              start: "2017-10-27 19:00:00",
+              end: "2017-10-28 07:00:00",
+              usuario_id: 1,
+              unidade_id: 1,
+              tipo_atendimento: 2,
+              color: tarde)
               
 puts "gerando eventos de tests [OK]"

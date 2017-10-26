@@ -3,10 +3,10 @@ calendar.fullCalendar({
   header: {
     right:  'agendaWeek,month,today prev,next'
   },
+  displayEventTime : false,
   selectable: true,
   selectHelper: true,
   editable: true,
-  eventLimit: true,
   events: '/events.json?unidade=1',
   
  select: function(start, end) {
