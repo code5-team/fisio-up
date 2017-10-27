@@ -33,8 +33,8 @@ Usuario.create!(nome: 'Matheus Oliveira',
                   ]
               )
 
-Usuario.create!(nome: 'Lucas almeida', 
-                email: 'lucas.almeida@msn.com', 
+Usuario.create!(nome: 'Roberto Almeida', 
+                email: 'roberto.almeida@msn.com', 
                 crefito: "152030",
                 datanascimento: '2017-06-01',
                 admin: true,
@@ -112,6 +112,10 @@ Unidade.create!(nome: 'Clinica Dona Isabel',
                 localizacao: 'Vila Olimpia',
                 tipo_unidade_id: 1)
                 
+Unidade.create!(nome: 'Clinica Dona Benta',
+                localizacao: 'Vila Olimpia',
+                tipo_unidade_id: 1)
+                
 puts "Gerando unidades[OK]..."
 
 puts "gerando eventos de teste"
@@ -120,110 +124,85 @@ cedo ='#ff6f00'
 tarde = '#424242'
 adm = '#0d47a1'
 
-Event.create!(title: "Matheus Oliveira",
-              start: "2017-10-21 07:00:00",
-              end: "2017-10-21 19:00:00",
+datainicio = DateTime.new(2017,10,1,7,0,0)
+datafim = DateTime.new(2017,10,1,19,0,0)
+
+40.times do
+  Event.create!(title: "Matheus Oliveira",
+              start: datainicio,
+              end: datafim,
               usuario_id: 2,
               unidade_id: 1,
               tipo_atendimento: 1,
               color: cedo)
+  
+  datainicio = datainicio + 1.days
+  datafim = datafim + 1.days
+end
 
-Event.create!(title: "Code5 Development",
-              start: "2017-10-21 19:00:00",
-              end: "2017-10-22 07:00:00",
-              usuario_id: 1,
-              unidade_id: 1,
-              tipo_atendimento: 2,
-              color: tarde)    
+datainicio = DateTime.new(2017,10,1,19,0,0)
+datafim = DateTime.new(2017,10,2,7,0,0)
 
-Event.create!(title: "Lucas Almeida",
-              start: "2017-10-21 08:00:00",
-              end: "2017-10-21 17:00:00",
+40.times do
+  Event.create!(title: "Roberto Almeida",
+              start: datainicio,
+              end: datafim,
               usuario_id: 3,
-              unidade_id: 1,
-              tipo_atendimento: 3,
-              color: adm)   
-              
-              
-              
-Event.create!(title: "Matheus Oliveira",
-              start: "2017-10-24 07:00:00",
-              end: "2017-10-24 19:00:00",
-              usuario_id: 2,
-              unidade_id: 1,
-              tipo_atendimento: 1,
-              color: cedo)
-
-Event.create!(title: "Code5 Development",
-              start: "2017-10-24 19:00:00",
-              end: "2017-10-25 07:00:00",
-              usuario_id: 1,
-              unidade_id: 1,
-              tipo_atendimento: 2,
-              color: tarde)    
-
-Event.create!(title: "Lucas Almeida",
-              start: "2017-10-23 08:00:00",
-              end: "2017-10-23 17:00:00",
-              usuario_id: 3,
-              unidade_id: 1,
-              tipo_atendimento: 3,
-              color: adm)  
-              
-Event.create!(title: "Matheus Oliveira",
-              start: "2017-10-01 19:00:00",
-              end: "2017-10-02 07:00:00",
-              usuario_id: 2,
               unidade_id: 1,
               tipo_atendimento: 2,
               color: tarde)
-              
-Event.create!(title: "Code5 Development",
-              start: "2017-10-22 08:00:00",
-              end: "2017-10-22 17:00:00",
-              usuario_id: 1,
+  
+  datainicio = datainicio + 1.days
+  datafim = datafim + 1.days
+end
+
+datainicio = DateTime.new(2017,10,1,8,0,0)
+datafim = DateTime.new(2017,10,1,13,0,0)
+
+
+40.times do
+  Event.create!(title: "Juca de Oliveira",
+              start: datainicio,
+              end: datafim,
+              usuario_id: 6,
               unidade_id: 1,
               tipo_atendimento: 3,
               color: adm)
-              
-Event.create!(title: "Code5 Development",
-              start: "2017-10-23 08:00:00",
-              end: "2017-10-23 17:00:00",
-              usuario_id: 1,
-              unidade_id: 1,
-              tipo_atendimento: 3,
-              color: adm)
-              
-Event.create!(title: "Code5 Development",
-              start: "2017-10-15 19:00:00",
-              end: "2017-10-16 07:00:00",
-              usuario_id: 1,
-              unidade_id: 1,
-              tipo_atendimento: 2,
-              color: tarde)
-              
-Event.create!(title: "Lucas almeida",
-              start: "2017-10-29 08:00:00",
-              end: "2017-10-29 17:00:00",
-              usuario_id: 3,
-              unidade_id: 1,
-              tipo_atendimento: 3,
-              color: adm) 
-              
-Event.create!(title: "Matheus Oliveira",
-              start: "2017-10-27 07:00:00",
-              end: "2017-10-27 19:00:00",
+  
+  datainicio = datainicio + 1.days
+  datafim = datafim + 1.days
+end
+
+datainicio = DateTime.new(2017,10,1,7,0,0)
+datafim = DateTime.new(2017,10,1,19,0,0)
+
+40.times do
+  Event.create!(title: "Matheus Oliveira",
+              start: datainicio,
+              end: datafim,
               usuario_id: 2,
-              unidade_id: 1,
+              unidade_id: 2,
               tipo_atendimento: 1,
               color: cedo)
-              
-Event.create!(title: "Code5 Development",
-              start: "2017-10-27 19:00:00",
-              end: "2017-10-28 07:00:00",
-              usuario_id: 1,
-              unidade_id: 1,
+  
+  datainicio = datainicio + 1.days
+  datafim = datafim + 1.days
+end
+
+datainicio = DateTime.new(2017,10,1,19,0,0)
+datafim = DateTime.new(2017,10,2,7,0,0)
+
+40.times do
+  Event.create!(title: "Roberto Almeida",
+              start: datainicio,
+              end: datafim,
+              usuario_id: 3,
+              unidade_id: 2,
               tipo_atendimento: 2,
               color: tarde)
-              
+  
+  datainicio = datainicio + 1.days
+  datafim = datafim + 1.days
+end
+
 puts "gerando eventos de tests [OK]"
