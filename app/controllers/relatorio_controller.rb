@@ -37,9 +37,9 @@ class RelatorioController < ApplicationController
   end
 
   def find_plantao(usuario, data_inicio, data_fim)
-    
     data_inicio = DateTime.parse(data_inicio, '%Y-%m-%dT%H:%M:%S')
     data_fim = DateTime.parse(data_fim, '%Y-%m-%dT%H:%M:%S').change({hour: 23, minute: 59, second: 59})
+
     return Event.where("usuario_id = ? AND start >= ? AND start <= ?", usuario.id, data_inicio, data_fim)
   end
 end
