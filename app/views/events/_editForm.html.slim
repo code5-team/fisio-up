@@ -13,4 +13,7 @@
       = f.input :tipo_atendimento, label: 'Atendimento: ', as: :select , collection: [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], input_html: {class: 'browser-default'}
   = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
   = f.button :submit, "Concluir"
+  p
+  - if @event.start > Date.today
+    = link_to 'Cancelar Plantão', event, method: :delete, class: 'btn waves-effect waves-light',data: { confirm: 'Tem certeza?' }, remote: true
   
