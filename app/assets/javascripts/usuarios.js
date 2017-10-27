@@ -8,13 +8,14 @@ calendar.fullCalendar({
   selectHelper: true,
   editable: true,
   events: '/events.json?unidade=1',
+
   
  select: function(start, end) {
       if (moment(start).format('YYYY-MM-DD') < moment(Date.now()).format('YYYY-MM-DD')){
         alert('Não pode criar um evento no passado!');
         return;
       }
-        $.getScript('/events/new?start=' + moment(start).format('YYYY-MM-DD HH:mm:ss') , function() {
+        $.getScript('/events/new?start=' + moment(start).format('YYYY-MM-DD HH:mm:ss'), function() {
           $('#event_date_range').val(moment(start).format("DD/MM/YYYY HH:mm") + ' - ' + moment(end).format("DD/MM/YYYY HH:mm"))
           date_range_picker();
           $('.start_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));

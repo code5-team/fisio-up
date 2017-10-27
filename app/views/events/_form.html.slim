@@ -6,6 +6,7 @@
   = f.hidden_field :start, value: @data_atual
   = f.hidden_field :end, value: @data_atual
   = f.hidden_field :color, value: 'green'
+  = f.hidden_field :unidade_id, value: @unidade
   
   = f.input_field :title, as: :hidden, value: @usuario.nome
   = f.input :tipo_atendimento, label: 'Atendimento: ', as: :select , collection: [['Matutino - 07 á 19', 1], ['Vespertino - 19 á 07', 2], ['Administrativo - 08 á 17', 3]], input_html: {class: 'browser-default'}

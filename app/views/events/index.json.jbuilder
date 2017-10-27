@@ -7,6 +7,7 @@ date_format = '%Y-%m-%d %H:%M:%S'
   json.color event.color unless event.color.blank?
   
   json.update_url event_path(event, method: :patch)
+  json.unidade = event.unidade_id
   json.edit_url edit_event_path(event)
   json.usuario_id = event.usuario_id
 end

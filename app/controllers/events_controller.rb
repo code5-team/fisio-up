@@ -2,8 +2,10 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :show, :destroy]
   
   def index
-    @events = Event.all#Event.where(start: params[:start]..params[:end], unidade_id: params[:unidade_id])
+    @events = Event.where(unidade_id: params[:unidade])
     @usuario = helpers.current_user
+    @unidade = params[:unidade]
+    session[:unidade] = @unidade
   end
   
   def show
@@ -17,6 +19,7 @@ class EventsController < ApplicationController
   def new
     @usuario = helpers.current_user
     @data_atual = params[:start]
+    @unidade = session[:unidade]
     @data_formatada = DateTime.parse(@data_atual, '%Y-%m-%dT%H:%M:%S') + 23.hours
     @eventos ||= Event.where('usuario_id = ? AND start BETWEEN ? AND ? ', @usuario.id, @data_atual, @data_formatada)
     @event = Event.new
@@ -92,7 +95,7 @@ class EventsController < ApplicationController
   
   private 
   def event_params
-    params.require(:event).permit(:title, :start, :end, :observaco, :usuario_id, :tipo_atendimento, :color, :unidade_id => 1)
+    params.require(:event).permit(:title, :start, :end, :observaco, :usuario_id, :tipo_atendimento, :color, :unidade_id)
   end
   
   def set_event
