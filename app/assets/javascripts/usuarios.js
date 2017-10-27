@@ -45,8 +45,10 @@ $('.side-bar ul li').each(function() {
         calendar.fullCalendar('addEventSource', events);
         calendar.fullCalendar('rerenderEvents' );
       }
-    })
-  })
+    });
+    $('.side-bar ul li').removeClass('active');
+    $(this).addClass('active');
+  });
 });
 
 $(document).on('turbolinks:load');

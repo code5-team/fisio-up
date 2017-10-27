@@ -5,6 +5,6 @@
         i.material-icons.left filter_list
         | Localidade
       - @unidades.each do |unidade|
-        li data-filter="#{unidade.id}" = unidade.nome
+        li.waves-effect.waves-deep-purple data-filter="#{unidade.id}" class=(@unidades.first == unidade ? 'active' : '') = unidade.nome
   .calendar.col.s12.m8.l9.offset-m4.offset-l3
     #calendar

@@ -11,17 +11,19 @@
 
     ul li {
       height: 44px;
+      width: 100%;
       line-height:44px;
       padding-left: 15px;
       transition: 0.3s ease-out;
 
-      &:hover { background: rgba(0, 0, 0, 0.5) }
+      &:hover { background: rgba(0, 0, 0, 0.3) }
 
       &.filter-title {
         font-size: 16px;
         padding-left: 0;
         &:hover { background: $secundary-color }
       }
+      &.active { background: rgba(0, 0, 0, .1) }
     }
   }
 

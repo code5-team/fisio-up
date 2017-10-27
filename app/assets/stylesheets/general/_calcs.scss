@@ -1,7 +1,6 @@
 #calcs {
   margin: 0;
   z-index: 0;
-  
 
   .side-bar {
     background: $secundary-color;
@@ -15,17 +14,22 @@
       margin: 0;
 
       &::-webkit-scrollbar { display: none }
+      &::-moz-scrollbar { display: none }
 
       li {
         min-height: 44px;
         line-height:20px;
         padding: 10px;
+        width: 100%;
+
+        &:hover { background: rgba(0, 0, 0, 0.3) }
 
         &.filter-title {
           font-size: 16px;
           padding-left: 0;
+          &:hover { background: $secundary-color }
         }
-        &.active { font-weight: bold }
+        &.active { background: rgba(0, 0, 0, .1) }
       }
     }
   }

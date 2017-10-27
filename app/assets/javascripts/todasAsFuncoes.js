@@ -1,13 +1,9 @@
 function menuSelecionado(classeDaLista, formDaLista){
-  $('.formula').css("font-weight", "normal");
+  $('.formula').removeClass('active');
   $('.form-grid').removeClass('active');
   $(".resultado-tela").empty();
 
-  $(classeDaLista).css(
-    {
-      "font-weight" : "bold",
-    }
-  );
+  $(classeDaLista).addClass('active');
 
   $(formDaLista).addClass('active');
   //console.log(classeDaLista);
