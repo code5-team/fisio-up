@@ -1,0 +1,18 @@
+.container
+  .row.title
+    .col Novo Relatório
+
+  = form_tag consulta_relatorio_path, :method => :get
+    .input-field
+      = collection_select :get, :usuario, @equipe, :id, :nome
+      label Profissional
+
+    .date_field
+      label De
+      = text_field :get, :datainicio, class: 'materialize-datepicker'
+
+    .date_field
+      label Até
+      = text_field :get, :datafim, class: 'materialize-datepicker'
+
+    = submit_tag 'gerar',class: 'btn right'

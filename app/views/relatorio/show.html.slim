@@ -1,0 +1,35 @@
+.container
+  .row.title
+    .col Relatório
+    .col.right = link_to 'voltar', relatorio_path, class: 'btn'
+  .content
+    .row
+      .col
+        span Funcionário: 
+        span = @membro.nome
+      .col.right
+        span Plantões: 
+        span = @total_plantoes
+      .col.right
+        span Horas: 
+        span = @total_horas
+    - if @plantoes.empty?
+      .center Não há plantões cadastrados nesse periodo!
+    - else
+      table.highlight
+        thead
+          tr
+            th título
+            th Unidade
+            th Inicio
+            th duração
+            th observação
+        tbody
+          - @plantoes.each do |plantao|
+            tr
+              td = plantao.title
+              td = @unidade.find(plantao.unidade_id).nome
+              td = plantao.start.strftime('%d/%m/%Y %H:%M')
+              td = Time.diff(plantao.start, plantao.end, '%hH')[:diff]
+              td = plantao.observaco
+

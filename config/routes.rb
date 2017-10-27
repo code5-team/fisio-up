@@ -23,11 +23,14 @@ Rails.application.routes.draw do
   get '/plantoes', to: 'plantoes#index'
   get '/formulas', to: 'formulas#index'
   get '/unidade', to: 'unidade#index'
+  get '/relatorio', to: 'relatorio#index'
 
   resources :unidade
 
   match '/unidade/:id' => 'unidade#destroy', via: 'delete', as: :destroy_unidade
   match '/unidade/:id' => 'unidade#update', via: 'put', as: :update_unidade
+
+  get '/consulta', to: 'relatorio#consulta', as: :consulta_relatorio
 
   delete '/logout', to: 'sessions#destroy'
   resources :password_resets, only: [:new, :edit, :create, :update]
