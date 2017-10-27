@@ -34,4 +34,19 @@ calendar.fullCalendar({
       });
       }
 });
-$(document).on('turbolinks:load')
+
+$('.side-bar ul li').each(function() {
+  $(this).on('click', function() {
+    url = '/events.json?unidade=' + $(this).data('filter');
+    $.ajax({
+      url: url,
+      success: function(events) {
+        calendar.fullCalendar('removeEvents');
+        calendar.fullCalendar('addEventSource', events);
+        calendar.fullCalendar('rerenderEvents' );
+      }
+    })
+  })
+});
+
+$(document).on('turbolinks:load');

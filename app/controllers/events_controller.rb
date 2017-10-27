@@ -2,7 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:edit, :update, :show]
   
   def index
-    @events = Event.all #Event.where(start: params[:start]..params[:end], unidade_id: params[:unidade_id])
+    @unidade = params['unidade']
+    if @unidade.nil?
+      @events = Event.all #Event.where(start: params[:start]..params[:end], unidade_id: params[:unidade_id])
+    else
+      @events = Event.where('unidade_id = ?', @unidade)
+    end
     @usuario = helpers.current_user
   end
   

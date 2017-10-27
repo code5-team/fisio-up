@@ -1,10 +1,10 @@
 #home.row
   .side-bar.col.s12.m4.l3
     ul
-      li.bold.filter-title Localidade
-      li Vila Olímpia
-      li Itaim Bibi
-      li Campo Belo
-      li Bela Vista
+      li.bold.filter-title.valign-wrapper
+        i.material-icons.left filter_list
+        | Localidade
+      - @unidades.each do |unidade|
+        li data-filter="#{unidade.id}" = unidade.nome
   .calendar.col.s12.m8.l9.offset-m4.offset-l3
     #calendar

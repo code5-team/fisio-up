@@ -13,6 +13,7 @@ class UsuariosController < ApplicationController
   
   def show
     @usuario = helpers.current_user
+    @unidades = Unidade.all
   end
   
   def edit
