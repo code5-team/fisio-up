@@ -61,6 +61,11 @@ class EventsController < ApplicationController
 
   def update
     @usuario = helpers.current_user
+    @unidade = session[:unidade]
+    
+    if @usuario.id != @event.usuario_id
+      return
+    end
     
     if @event.start < Date.today
       @event.update(event_params)

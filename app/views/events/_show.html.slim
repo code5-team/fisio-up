@@ -5,7 +5,7 @@
     = f.input :title, label: 'Plantonista', disabled: true, input_html: {value: @usuario.nome}
     
   = f.hidden_field :usuario_id, value: @usuario.id, disabled: true
-  
+  = f.hidden_field :unidade_id, value: @unidade
   = f.input :start, label: 'Início',as: :datetime, html5: true, disabled: true
   = f.input :end, label: 'Fim',as: :datetime, html5: true, disabled: true
   
