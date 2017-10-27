@@ -3,6 +3,12 @@
     .col Novo Relatório
 
   = form_tag consulta_relatorio_path, :method => :get
+    .switch
+      label
+        | Com Profissional
+        = check_box_tag 'with-user', '1', true, class: 'active'
+        span.lever
+    p
     .input-field
       = collection_select :get, :usuario, @equipe, :id, :nome
       label Profissional

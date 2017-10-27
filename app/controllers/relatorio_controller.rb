@@ -14,12 +14,16 @@ class RelatorioController < ApplicationController
     @unidade = Unidade.all
 
     @get = params[:get]
-    @membro = Usuario.find(@get['usuario'])
     @datainicio = @get['datainicio']
     @datafim = @get['datafim']
 
-    @plantoes = find_plantao(@membro, @datainicio, @datafim)
-
+    @with_user = params['with-user'] == '1' ? true : false
+    if @with_user
+      @membro = Usuario.find(@get['usuario'])
+      @plantoes = find_plantao_with_user(@membro, @datainicio, @datafim)
+    else
+      @plantoes = find_plantao(@datainicio, @datafim)
+    end
     @total_plantoes = @plantoes.length
 
     @total_horas = calc_horas(@plantoes)
@@ -36,7 +40,15 @@ class RelatorioController < ApplicationController
     return total
   end
 
-  def find_plantao(usuario, data_inicio, data_fim)
+
+  def find_plantao(data_inicio, data_fim)
+    data_inicio = DateTime.parse(data_inicio, '%Y-%m-%dT%H:%M:%S')
+    data_fim = DateTime.parse(data_fim, '%Y-%m-%dT%H:%M:%S').change({hour: 23, minute: 59, second: 59})
+
+    return Event.where("start >= ? AND start <= ?", data_inicio, data_fim)
+  end
+
+  def find_plantao_with_user(usuario, data_inicio, data_fim)
     data_inicio = DateTime.parse(data_inicio, '%Y-%m-%dT%H:%M:%S')
     data_fim = DateTime.parse(data_fim, '%Y-%m-%dT%H:%M:%S').change({hour: 23, minute: 59, second: 59})
 
