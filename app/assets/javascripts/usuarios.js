@@ -37,7 +37,6 @@ calendar.fullCalendar({
 });
 
 $('.side-bar ul li').each(function() {
-  console.log(!$(this).hasClass('filter-title'));
   if (!$(this).hasClass('filter-title')) {
     $(this).on('click', function() {
       url = '/events.json?unidade=' + $(this).data('filter');

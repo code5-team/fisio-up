@@ -8,15 +8,21 @@
         .col
           span Funcionário: 
           span = @membro.nome
+      .col
+        span Data inicio: 
+        span = @datainicio
+      .col
+        span Data fim: 
+        span = @datafim
       .col.right
-        span Plantões: 
-        span = @total_plantoes
+        span.bold Plantões: 
+        span.bold = @total_plantoes
       .col.right
-        span Horas: 
-        span = @total_horas
+        span.bold Horas: 
+        span.bold = @total_horas
     .row
       - if @plantoes.empty?
-        .center Não há plantões cadastrados nesse periodo!
+        .center Não há plantões como resultado dessa consulta!
       - else
         table.highlight
           thead
