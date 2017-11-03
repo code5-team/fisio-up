@@ -37,19 +37,22 @@ calendar.fullCalendar({
 });
 
 $('.side-bar ul li').each(function() {
-  $(this).on('click', function() {
-    url = '/events.json?unidade=' + $(this).data('filter');
-    $.ajax({
-      url: url,
-      success: function(events) {
-        calendar.fullCalendar('removeEvents');
-        calendar.fullCalendar('addEventSource', events);
-        calendar.fullCalendar('rerenderEvents' );
-      }
+  console.log(!$(this).hasClass('filter-title'));
+  if (!$(this).hasClass('filter-title')) {
+    $(this).on('click', function() {
+      url = '/events.json?unidade=' + $(this).data('filter');
+      $.ajax({
+        url: url,
+        success: function(events) {
+          calendar.fullCalendar('removeEvents');
+          calendar.fullCalendar('addEventSource', events);
+          calendar.fullCalendar('rerenderEvents' );
+        }
+      });
+      $('.side-bar ul li').removeClass('active');
+      $(this).addClass('active');
     });
-    $('.side-bar ul li').removeClass('active');
-    $(this).addClass('active');
-  });
+  }
 });
 
 $(document).on('turbolinks:load');
