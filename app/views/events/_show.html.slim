@@ -10,6 +10,6 @@
   = f.input :end, label: 'Fim',as: :datetime, html5: true, disabled: true
   
   = f.input_field :title, as: :hidden, value: @usuario.nome, disabled: true
-  = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica', disabled: true
+  = f.input :observaco, label: 'Observação:', disabled: true
   
   = f.button :button, "Concluir"

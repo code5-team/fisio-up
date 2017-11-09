@@ -58,7 +58,7 @@ Usuario.create!(nome: 'Teste da Silva',
                   ]
               )
               
-Usuario.create!(nome: 'Ppkeiro Clasheiro', 
+Usuario.create!(nome: 'Leonardo da Silva', 
                 email: 'ppclash@teste.com.br', 
                 crefito: "9049420",
                 datanascimento: '2017-06-01',
@@ -82,7 +82,7 @@ Usuario.create!(nome: 'Juca de Oliveira',
                   ]
               )
               
-Usuario.create!(nome: 'Juca da Salinha', 
+Usuario.create!(nome: 'Daniel Miyasato', 
                 email: 'barrinha@teste.com.br', 
                 crefito: "483489",
                 datanascimento: '2017-06-01',
@@ -124,8 +124,8 @@ cedo ='#ff6f00'
 tarde = '#424242'
 adm = '#0d47a1'
 
-datainicio = DateTime.new(2017,10,1,7,0,0)
-datafim = DateTime.new(2017,10,1,19,0,0)
+datainicio = DateTime.new(2017,11,1,7,0,0)
+datafim = DateTime.new(2017,11,1,19,0,0)
 
 40.times do
   Event.create!(title: "Matheus Oliveira",
@@ -140,8 +140,8 @@ datafim = DateTime.new(2017,10,1,19,0,0)
   datafim = datafim + 1.days
 end
 
-datainicio = DateTime.new(2017,10,1,19,0,0)
-datafim = DateTime.new(2017,10,2,7,0,0)
+datainicio = DateTime.new(2017,11,1,19,0,0)
+datafim = DateTime.new(2017,11,2,7,0,0)
 
 40.times do
   Event.create!(title: "Roberto Almeida",
@@ -156,8 +156,8 @@ datafim = DateTime.new(2017,10,2,7,0,0)
   datafim = datafim + 1.days
 end
 
-datainicio = DateTime.new(2017,10,1,8,0,0)
-datafim = DateTime.new(2017,10,1,13,0,0)
+datainicio = DateTime.new(2017,11,1,8,0,0)
+datafim = DateTime.new(2017,11,1,13,0,0)
 
 
 40.times do
@@ -173,8 +173,8 @@ datafim = DateTime.new(2017,10,1,13,0,0)
   datafim = datafim + 1.days
 end
 
-datainicio = DateTime.new(2017,10,1,7,0,0)
-datafim = DateTime.new(2017,10,1,19,0,0)
+datainicio = DateTime.new(2017,11,1,7,0,0)
+datafim = DateTime.new(2017,11,1,19,0,0)
 
 40.times do
   Event.create!(title: "Matheus Oliveira",
@@ -183,14 +183,15 @@ datafim = DateTime.new(2017,10,1,19,0,0)
               usuario_id: 2,
               unidade_id: 2,
               tipo_atendimento: 1,
+              observaco: 'Realizei a medição do índice de oxigenação do leito 3, estarei acompanhando.',
               color: cedo)
   
   datainicio = datainicio + 1.days
   datafim = datafim + 1.days
 end
 
-datainicio = DateTime.new(2017,10,1,19,0,0)
-datafim = DateTime.new(2017,10,2,7,0,0)
+datainicio = DateTime.new(2017,11,1,19,0,0)
+datafim = DateTime.new(2017,11,2,7,0,0)
 
 40.times do
   Event.create!(title: "Roberto Almeida",

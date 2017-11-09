@@ -7,13 +7,15 @@
   = f.hidden_field :end
   
   = f.input_field :title, as: :hidden, value: @usuario.nome
-  .input-field
-    - if @event.start < Date.today
-        = f.select :tipo_atendimento, [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], include_blank: false, disabled: true
+  
+  - if @event.start < Date.today
+    = f.input :start, label: 'Início',as: :datetime, html5: true, disabled: true
+    = f.input :end, label: 'Fim',as: :datetime, html5: true, disabled: true
+  - else
+    .input-field
+        = f.select :tipo_atendimento, [['Matutino - 07 às 19', '1'], ['Vespertino - 19 às 07', '2'], ['Administrativo - 08 às 17', '3']], include_blank: false
         = f.label 'Atendimento: '
-    - else
-        = f.select :tipo_atendimento, [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], include_blank: false
-        = f.label 'Atendimento: '
+        
   = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
   .row
     = f.button :submit, "Concluir", class: 'right'
