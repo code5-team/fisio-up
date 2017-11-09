@@ -13,5 +13,5 @@
     = f.select :tipo_atendimento, [['Matutino - 07 á 19', 1], ['Vespertino - 19 á 07', 2], ['Administrativo - 08 á 17', 3]], include_blank: false
     = f.label 'Atendimento: '
   = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
-  = f.button :submit, "Concluir"
+  = f.button :submit, "Concluir", class: 'right'
   

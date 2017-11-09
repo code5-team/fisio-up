@@ -1,9 +1,19 @@
-var calendar = $('#calendar');
+var calendar = $('#calendar'),
+    widthScreen = $(window).width(),
+    viewDefault = '';
+
+if (widthScreen > 480) {
+  viewDefault = 'month';
+} else {
+  viewDefault = 'listMonth';
+}
+
 calendar.fullCalendar({
   header: {
-    right:  'agendaWeek,month,today prev,next'
+    right:  'agendaWeek,month,listMonth,today prev,next'
   },
-  displayEventTime : false,
+  defaultView: viewDefault,
+  displayEventTime: false,
   selectable: true,
   selectHelper: true,
   editable: true,
@@ -34,6 +44,14 @@ calendar.fullCalendar({
       $('.end_hidden').val(moment(event.end).format('YYYY-MM-DD HH:mm'));
       });
       }
+});
+
+$(window).on('resize', function() {
+  if ($(this).width > 480) {
+    calendar.fullCalendar('changeView', 'month');
+  } else {
+    calendar.fullCalendar('changeView', 'listMonth');
+  }
 });
 
 $('.side-bar ul li').each(function() {

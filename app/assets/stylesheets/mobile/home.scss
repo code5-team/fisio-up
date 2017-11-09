@@ -1,0 +1,6 @@
+#home {
+  .side-bar { position: relative }
+  #calendar {
+    .fc-button-group:first-child { display: none }
+  }
+}

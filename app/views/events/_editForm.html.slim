@@ -15,8 +15,8 @@
         = f.select :tipo_atendimento, [['Matutino - 07 á 19', '1'], ['Vespertino - 19 á 07', '2'], ['Administrativo - 08 á 17', '3']], include_blank: false
         = f.label 'Atendimento: '
   = f.input :observaco, label: 'Observação:', placeholder: 'Registrar alguma observação especifica'
-  = f.button :submit, "Concluir"
-  p
+  .row
+    = f.button :submit, "Concluir", class: 'right'
   - if @event.start > Date.today
-    = link_to 'Cancelar Plantão', event, method: :delete, class: 'btn waves-effect waves-light',data: { confirm: 'Tem certeza?' }, remote: true
+    = link_to 'Cancelar Plantão', event, method: :delete, class: 'btn right red lighten-1 waves-effect waves-light',data: { confirm: 'Tem certeza?' }, remote: true
   
