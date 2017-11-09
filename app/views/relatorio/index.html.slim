@@ -3,15 +3,27 @@
     .col Novo Relatório
 
   = form_tag consulta_relatorio_path, :method => :get
-    .switch
-      label
-        | Com Profissional
-        = check_box_tag 'with-user', '1', true, class: 'active'
-        span.lever
-    p
-    .input-field
-      = collection_select :get, :usuario, @equipe, :id, :nome
-      label Profissional
+    .row
+      .col.s6
+        .switch
+          label
+            | Com Profissional
+            = check_box_tag 'with-user', '1', true, class: 'active'
+            span.lever
+        p
+        .input-field
+          = collection_select :get, :usuario, @equipe, :id, :nome
+          label Profissional
+      .col.s6
+        .switch
+          label
+            | Com Unidade
+            = check_box_tag 'with-unit', '1', true, class: 'active'
+            span.lever
+        p
+        .input-field
+          = collection_select :get, :unidade, @unidades, :id, :nome
+          label Unidade
 
     .date_field
       label De

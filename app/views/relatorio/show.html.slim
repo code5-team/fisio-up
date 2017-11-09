@@ -3,23 +3,29 @@
     .col Relatório
     .col.right = link_to 'voltar', relatorio_path, class: 'btn'
   .content
-    .row
-      - if @with_user
-        .col
-          span Funcionário: 
-          span = @membro.nome
-      .col
-        span Data inicio: 
-        span = @datainicio
-      .col
-        span Data fim: 
-        span = @datafim
+    .row.filter-detail
       .col.right
-        span.bold Plantões: 
-        span.bold = @total_plantoes
-      .col.right
-        span.bold Horas: 
-        span.bold = @total_horas
+        .col.right
+          span.bold Plantões: 
+          span.bold = @total_plantoes
+        .col.right
+          span.bold Horas: 
+          span.bold = @total_horas
+      .col.filter
+        - if @with_user
+          .chip
+            span Funcionário: 
+            span.bold = @membro.nome
+        - if @with_unit
+          .chip
+            span Unidade: 
+            span.bold = @unidade.nome
+        .chip
+          span Data inicio: 
+          span.bold = @datainicio
+        .chip
+          span Data fim: 
+          span.bold = @datafim
     .row
       - if @plantoes.empty?
         .center Não há plantões como resultado dessa consulta!
@@ -36,7 +42,7 @@
             - @plantoes.each do |plantao|
               tr
                 td = plantao.title
-                td = @unidade.find(plantao.unidade_id).nome
+                td = @unidades.find(plantao.unidade_id).nome
                 td = plantao.start.strftime('%d/%m/%Y %H:%M')
                 td = Time.diff(plantao.start, plantao.end, '%hH')[:diff]
                 td = plantao.observaco
