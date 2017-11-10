@@ -75,7 +75,7 @@ Usuario.create!(nome: 'Juca de Oliveira',
                 crefito: "1219048",
                 datanascimento: '2017-06-01',
                 admin: false,
-                ativo: false,
+                ativo: true,
                 password_digest: Usuario.digest("teste"),
                 telefones_attributes: [
                    { numero: '1156315601'}
