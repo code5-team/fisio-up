@@ -8,3 +8,14 @@ $('#with-user').on('change', function() {
     usuario.removeAttr('disabled');
   }
 });
+
+unidade = $('#get_unidade').parent().find('input');
+$('#with-unit').on('change', function() {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    unidade.attr('disabled', 'disabled');
+  } else {
+    $(this).addClass('active');
+    unidade.removeAttr('disabled');
+  }
+});
