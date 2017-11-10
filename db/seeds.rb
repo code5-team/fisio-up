@@ -127,13 +127,14 @@ adm = '#0d47a1'
 datainicio = DateTime.new(2017,11,1,7,0,0)
 datafim = DateTime.new(2017,11,1,19,0,0)
 
-40.times do
+20.times do
   Event.create!(title: "Matheus Oliveira",
               start: datainicio,
               end: datafim,
               usuario_id: 2,
               unidade_id: 1,
               tipo_atendimento: 1,
+              observaco: 'Realizei a medição do índice de oxigenação do leito 3, estarei acompanhando.',
               color: cedo)
   
   datainicio = datainicio + 1.days
@@ -173,37 +174,5 @@ datafim = DateTime.new(2017,11,1,13,0,0)
   datafim = datafim + 1.days
 end
 
-datainicio = DateTime.new(2017,11,1,7,0,0)
-datafim = DateTime.new(2017,11,1,19,0,0)
-
-40.times do
-  Event.create!(title: "Matheus Oliveira",
-              start: datainicio,
-              end: datafim,
-              usuario_id: 2,
-              unidade_id: 2,
-              tipo_atendimento: 1,
-              observaco: 'Realizei a medição do índice de oxigenação do leito 3, estarei acompanhando.',
-              color: cedo)
-  
-  datainicio = datainicio + 1.days
-  datafim = datafim + 1.days
-end
-
-datainicio = DateTime.new(2017,11,1,19,0,0)
-datafim = DateTime.new(2017,11,2,7,0,0)
-
-40.times do
-  Event.create!(title: "Roberto Almeida",
-              start: datainicio,
-              end: datafim,
-              usuario_id: 3,
-              unidade_id: 2,
-              tipo_atendimento: 2,
-              color: tarde)
-  
-  datainicio = datainicio + 1.days
-  datafim = datafim + 1.days
-end
 
 puts "gerando eventos de tests [OK]"

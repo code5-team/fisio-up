@@ -10,7 +10,8 @@ center
         th Nome
         th Email
         th Crefito
-        th Aprovação
+        th Aprovar
+        th Recusar
 
       - @todosusuarios.each do |usuario|
           = form_tag(update_management_path) do
@@ -20,6 +21,7 @@ center
               td = usuario.email
               td = usuario.crefito
               td = submit_tag 'Aprovar'
+              td = submit_tag 'Recusar'
           
 
 

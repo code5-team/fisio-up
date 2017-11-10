@@ -51,9 +51,16 @@ class UsuariosController < ApplicationController
   end
   
   def update_management
-    @todosusuarios = Usuario.find(params[:usuario_id])
-    @todosusuarios.update_attributes(ativo: true)
-    redirect_to action: 'management'
+    if params[:commit] == 'Aprovar'
+      @todosusuarios = Usuario.find(params[:usuario_id])
+      @todosusuarios.update_attributes(ativo: true)
+    else
+      usuario = params[:usuario_id]
+      telefone = Telefone.where(usuario_id: usuario)
+      Telefone.destroy(telefone)
+      Usuario.find(params[:usuario_id]).destroy
+    end
+      redirect_to action: 'management'
   end
   
   
