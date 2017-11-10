@@ -1,4 +1,8 @@
+<% unless @eventos.blank? %>
+  alert("Não é possível criar um evento no mesmo dia ou horário que você já está escalado");
+<% else %>
 $('body').addClass('modal-opened');
 $('#modal').addClass('opened');
 $('#remote-container').html('<%= j render "new" %>');
 $('select').material_select();
+<% end %>

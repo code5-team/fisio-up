@@ -21,11 +21,8 @@ class EventsController < ApplicationController
     @data_atual = params[:start]
     @unidade = session[:unidade]
     @data_formatada = DateTime.parse(@data_atual, '%Y-%m-%dT%H:%M:%S') + 23.hours
-    @eventos ||= Event.where('usuario_id = ? AND start BETWEEN ? AND ? ', @usuario.id, @data_atual, @data_formatada)
+    @eventos ||= Event.where('usuario_id = ? AND start BETWEEN ? AND ? AND unidade_id = ?', @usuario.id, @data_atual, @data_formatada, @unidade)
     @event = Event.new
-    unless @eventos.blank?
-      flash[:plantao] = "Você não pode criar um plantão se já está vinculado ao mesmo horario"
-    end
   end
   
   def edit
