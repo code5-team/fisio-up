@@ -17,13 +17,13 @@
             th Aprovar
             th Recusar
         tbody
-          - @todosusuarios.each do |usuario|
-            = form_tag(update_management_path) do
-              = hidden_field_tag :usuario_id, usuario.id
+          = form_tag(update_management_path) do
+            - @todosusuarios.each do |usuario|
               tr
                 td = usuario.nome
                 td = usuario.email
                 td = usuario.crefito
                 td = submit_tag 'Aprovar', class: 'btn green lighten-1'
                 td = submit_tag 'Recusar', class: 'btn red lighten-1'
+              = hidden_field_tag :usuario_id, usuario.id
    
