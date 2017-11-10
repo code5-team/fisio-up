@@ -1,29 +1,29 @@
-center
-  = flash.now[:notice] unless flash[:notice].blank?
+.container
+  .row.title
+    .col Liberação de cadastros
 
-- unless @todosusuarios.empty?
-  .table-users
-    .header Liberação de cadastros
-    
-    table class = "table-final"
-      tr
-        th Nome
-        th Email
-        th Crefito
-        th Aprovar
-        th Recusar
+  .content
+    center
+      = flash.now[:notice] unless flash[:notice].blank?
 
-      - @todosusuarios.each do |usuario|
-          = form_tag(update_management_path) do
-            = hidden_field_tag :usuario_id, usuario.id
-            tr
-              td = usuario.nome
-              td = usuario.email
-              td = usuario.crefito
-              td = submit_tag 'Aprovar'
-              td = submit_tag 'Recusar'
-          
+    - unless @todosusuarios.empty?
 
-
-
+      table.highlight
+        thead
+          tr
+            th Nome
+            th Email
+            th Crefito
+            th Aprovar
+            th Recusar
+        tbody
+          - @todosusuarios.each do |usuario|
+            = form_tag(update_management_path) do
+              = hidden_field_tag :usuario_id, usuario.id
+              tr
+                td = usuario.nome
+                td = usuario.email
+                td = usuario.crefito
+                td = submit_tag 'Aprovar', class: 'btn green lighten-1'
+                td = submit_tag 'Recusar', class: 'btn red lighten-1'
    
