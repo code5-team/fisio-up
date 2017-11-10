@@ -9,3 +9,11 @@
     .fc-button-group:first-child { display: none }
   }
 }
+
+#calcs {
+  .side-bar {
+    position: relative;
+
+    ul { margin: 5px 0 }
+  }
+}
