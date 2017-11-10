@@ -47,7 +47,7 @@ calendar.fullCalendar({
 });
 
 $(window).on('resize', function() {
-  if ($(this).width > 480) {
+  if ($(this).width() > 480) {
     calendar.fullCalendar('changeView', 'month');
   } else {
     calendar.fullCalendar('changeView', 'listMonth');
